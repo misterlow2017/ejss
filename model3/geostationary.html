@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Load MathJax with in-line configuration after the page is ready</title>
+
+
+<script type="text/javascript">
+//
+//  We wait for the onload function to show that MathJax is laoded after 
+//  the page is ready, and then use setTimeout to prove that MathJax is
+//  definitely loaded after the page is displayed and active.  MathJax is 
+//  loaded two seconds after the page is ready.
+//
+window.onload = function () {
+  setTimeout(function () {
+    var head = document.getElementsByTagName("head")[0], script;
+    script = document.createElement("script");
+    script.type = "text/x-mathjax-config";
+    script[(window.opera ? "innerHTML" : "text")] =
+      "MathJax.Hub.Config({\n" +
+      "  tex2jax: { inlineMath: [['$','$'], ['\\\\(','\\\\)']] }\n" +
+      "});"
+    head.appendChild(script);
+    script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML";
+    head.appendChild(script);
+  },2000)
+}
+</script>
+
+<style>
+h3 {
+  text-align: center;
+  background: #CCCCCC;
+  padding: .2em 1em;
+  border-top: 3px solid #666666;
+  border-bottom: 3px solid #999999;
+}
+</style>
+
+</head>
+<body>
+
+<h3>Geostationary vs Geosynchronous Satellites</h3>
+
+<p>
+ The geostationary satellite gets its name from the fact that it is launched into an orbit such that it has a period of exactly one day and so remains constantly over one point on the Earth's surface. To be geostationary it must have an orbit that lies in the plane of the equator. Photographs taken from a fixed camera aboard such a satellite would always show the same view of the Earth's Surface. </p>
+ 
+Since the gravitational force provides the centripetal force for the satellite to orbit around the Earth, we use the relation \( F = \frac{G M_E m_s}{r^2} \) and \( v = \frac{2\pi r}{T} \) to get 
+$$ r^3= \frac{G M_E T^2}{4 \pi ^2} $$
+</p>
+
+<p>For the Earth all synchronous satellites are in an orbit 42000 km from the Earth's centre - a potential problem for cosmic junk! 
+</p>
+<p>
+Summary of the properties of a geostationary satellite (for the Earth):</p>
+<ol>
+<li> they have an orbit which lies in the same plane as the equator of the Earth</li>
+<li> the period of the satellite is one Earth day</li>
+<li> they have the same angular velocity as the Earth</li>
+<li> the move around their orbit in the same direction as the rotation of the Earth</li>
+<li> they remain above a fixed point on the Earth's surface</li>
+</ol>
+
+
+<p>A satellite that orbits the Earth so that it passes over a fixed point on the Earth's surface at the same time each day is called a geosynchronous satellite. Such a satellite need not have its orbit in the plane of the equator but the orbit radius will be the same as that for a geostationary satellite.</p>
+
+</body>
+</html>

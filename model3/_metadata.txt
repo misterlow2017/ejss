@@ -1,0 +1,24 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 171013. Visit http://www.um.es/fem/Ejs
+title: 
+logo-image: images/satellite_logo.PNG
+author: John Low; John Low
+copyright: 
+preferred-width: 800
+preferred-height: 600
+author-image: images/john_logo.png;
+source: satellitev2.ejss
+main-script: 
+main-simulation: satellitev2_Simulation.xhtml
+available-languages: 
+html-contents: satellitev2_Contents.xhtml
+html-main: satellitev2.xhtml
+page-title: Simulation
+page-index: satellitev2_Simulation.xhtml
+resource: images/4096_earth.png
+resource: images/aqua13.js
+resource: geostationaryex.html
+resource: images/GOES.js
+resource: images/satellite_logo.PNG
+resource: geostationary.html
+resource: images/night_sky.png
+resource: images/john_logo.png

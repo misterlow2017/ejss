@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+<script type='text/javascript'>
+  function showhide(myDIV) {
+    var x = document.getElementById(myDIV);    
+    if (x.style.display == 'none') {
+        x.style.display = 'block';    
+		} else {     
+		x.style.display = 'none'; 	
+        }
+	}
+	$(function() {
+    $('a').click(function() {
+        $(this).find('i').toggleClass('fa-eye fa-eye-slash');
+    });
+});
+</script>
+
+<script type="text/javascript">
+//
+//  We wait for the onload function to show that MathJax is laoded after 
+//  the page is ready, and then use setTimeout to prove that MathJax is
+//  definitely loaded after the page is displayed and active.  MathJax is 
+//  loaded two seconds after the page is ready.
+//
+window.onload = function () {
+  setTimeout(function () {
+    var head = document.getElementsByTagName("head")[0], script;
+    script = document.createElement("script");
+    script.type = "text/x-mathjax-config";
+    script[(window.opera ? "innerHTML" : "text")] =
+      "MathJax.Hub.Config({\n" +
+      "  tex2jax: { inlineMath: [['$','$'], ['\\\\(','\\\\)']] }\n" +
+      "});"
+    head.appendChild(script);
+    script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML";
+    head.appendChild(script);
+  },2000)
+}
+</script>
+
+<style>
+table {
+    border-collapse: collapse;
+}
+
+table, td {
+    vertical-align:top;
+	border: 1px solid #dfdfdf;
+	padding: 5px;
+}
+</style>
+
+
+</head>
+
+
+<body>
+<h4>GCE A level 2011 Physics (9646) Paper 3 Question 6</h4>
+
+<table>
+<tr><td>(a)</td><td>(i)</td><td>
+Define <i>gravitational potential</i> at a point. [2] <br></td></tr>
+
+
+<tr><td>
+ <a href='#A1' onclick='showhide("A1")'> <i class='fa fa-eye fa-x'></i></a></td><td></td><td>
+   <div id='A1' style= 'display:none;color:red' > 
+The gravitational potential at a point in a gravitational field is the work done per unit mass by an external agent in bringing a small point mass from infinity to that point without accelerating it. 		
+  
+   </div>
+</td></tr>
+
+<tr><td></td><td>(ii)</td><td>
+ The gravitational potential \( \phi \) at a distaance r from an isolated point mass m is given by the expression <br>
+					$$ \phi = -\frac{Gm}{r} $$
+
+	where G is the gravitational constant.<br><br>
+
+	Explain why gravitational potential is negative. [2]<br></td></tr>
+					 
+      
+  <tr><td> 
+  <a href='#A2' onclick='showhide("A2")'> <i class='fa fa-eye fa-x'></i></a></td><td></td><td>
+   <div id='A2' style= 'display:none;color:red' > 
+  
+Gravitational potential is negative because gravitational force is attractive in nature. Hence, the external agent has to exert a force opposite to that of the displacement due to gravitational force, in order for the point mass not to accelerate while being moved from infinity to that point. Therefore negative work is done by the external agent (since the direction of the external force and the displacement of the mass is opposite). Since gravitational potential is defined as zero at infinity, and negative work is done by external agent, gravitational potential is negative everywhere in space except at infinity itself by definition.<br>
+</div>
+</td></tr>
+
+
+<tr><td>(b)</td><td></td><td>
+The Earth may be assumed to be an isolated uniform sphere with its mass M concentrated at its centre.  A satellite of mass m orbits the Earth in a circular path of radius R.<br><br>
+For the satellite in its orbit, show that<br></td></tr>
+
+<tr><td></td><td>(i)</td><td>
+ its kinetic energy \( E_k \) is given by <br>
+          $$ E_k= \frac{GMm}{2R} $$
+		  
+		  <p align="right">[3]</p></td></tr>
+
+<tr><td> 
+<a href='#A3' onclick='showhide("A3")'> <i class='fa fa-eye fa-x'></i></a></td><td></td><td>
+   <div id='A3' style= 'display:none;color:red' > 
+   
+   The gravitational force that the Earth exerts on the satellite provides the necessary centripetal force required to keep the satellite in circular motion.<br><br>
+     \( \frac{GMm}{R^2} = \frac{mv^2}{R} \) <br><br>
+    \( \frac{GMm}{R} = mv^2 \) <br><br>
+      Therefore,  \( E_k = \frac{1}{2}mv^2=  \frac{GMm}{2R} \) <br>
+
+   
+   </div>
+ </td></tr>
+
+<tr><td></td><td>(ii)</td><td> 
+ its total energy \( E_T \) is given by <br>
+          $$ E_T= -\frac{GMm}{2R} $$
+		  
+		  <p align="right">[2]</p></td></tr>
+
+<tr><td> 
+<a href='#A4' onclick='showhide("A4")'> <i class='fa fa-eye fa-x'></i></a></td><td></td><td>
+   <div id='A4' style= 'display:none;color:red' > 
+ 
+Gravitational potential energy  \( E_p= -\frac{GMm}{R} \) <br><br>
+
+Total energy  \( E_T=E_p + E_k = \frac{GMm}{2R} -\frac{GMm}{R} =-\frac{GMm}{2R}  \) <br>
+
+</div>
+ </td></tr>
+ 
+
+
+<tr><td>(c)</td><td></td><td>  
+The Earth has radius \( 6.4 \times 10^6 \ m \) and mass \( 6.0 \times 10^{24} \ kg \) <br><br>
+
+
+A satellite has mass 850 kg and orbital radius \( 7.2 \times 10^6 \ m \) <br></td></tr>
+
+
+<tr><td></td><td>(i)</td><td>  
+Use an expression in (b) to determine the speed of the satellite. [3]<br></td></tr>
+
+<tr><td> 
+<a href='#A5' onclick='showhide("A5")'> <i class='fa fa-eye fa-x'></i></a></td><td></td><td>
+   <div id='A5' style= 'display:none;color:red' > 
+\( E_k = \frac{1}{2} mv^2 = \frac{GMm}{2R}  \)<br><br>
+
+\( v^2 = \frac{GM}{R} \)<br><br>
+
+\( v = \sqrt{\frac{GM}{R}}  = \sqrt{\frac{6.67 \times 10^{-11} \times 6.0 \times 10^{24}}{7.2 \times 10^6}}  = 7.455 \times 10^3 m\ s^{-1} \)<br>
+
+
+</div></td></tr>
+ 
+
+
+<tr><td></td><td>(ii)</td><td>
+
+Determine quantitatively whether the satellite could be in a geostationary orbit.  [4]<br></td></tr>
+
+<tr><td> 
+<a href='#A6' onclick='showhide("A6")'> <i class='fa fa-eye fa-x'></i></a></td><td></td><td>
+   <div id='A6' style= 'display:none;color:red' > 
+The period of the orbit <br><br>
+
+ \( T = \frac{2πr}{v} = \frac{2π \times 7.2 \times 10^6}{7455} = 6068 s = 1.7 hrs \) <br><br>
+
+Part of the criteria of a geostationary satellite need to have the same period as the Earth’s rotation which is 24 hrs. Since the period of this satellite is only 1.7 hrs, it cannot be in geostationary orbit.
+<br>
+
+</div></td></tr>
+
+
+<tr><td>(d)</td><td></td><td>
+The satellite in (c) gradually loses energy due to small resistive forces.  Suggest why many such satellites eventually 'burn up' in the Earth's atmosphere. [4]<br></td></tr>
+
+<tr><td> 
+<a href='#A7' onclick='showhide("A7")'> <i class='fa fa-eye fa-x'></i></a></td><td></td><td>
+   <div id='A7' style= 'display:none;color:red' > 
+
+As the satellite loses energy, its total energy becomes more negative. Using the equation total energy = \( -\frac{GMm}{2R} \), the radius of orbit R decreases. Eventually the satellite will enter a lower part of the atmosphere where there is more air and hence experiences greater air resistance.<br><br>
+
+Also, as R decreases, its kinetic energy (= \( \frac{GMm}{2R} \) ) and speed increases. Since air resistance increases with speed, together with the greater amount of air in the lower part of the atmosphere, the resistive force against the satellite increases substantially. The increasing resistive forces would give rise to an increasing rate of conversion of energy of the satellite to thermal energy. Hence the satellite will burn up due to increasing temperature.
+<br>
+
+</div> </td></tr>
+</table>
+
+
+</body>
+</html>
+

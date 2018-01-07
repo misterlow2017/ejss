@@ -2,6 +2,7 @@ package:true
 generated-with: Easy Java/Javascript Simulations, version 5.2, build 171013. Visit http://www.um.es/fem/Ejs
 folder:Unnamed
 read-only:true
-model:model1 | Kinematics - Projectile Motion
-model:model2 | Rayleigh Criterion
-model:model3 | 
+model:collisions | Simple Collisions
+model:projectile | Kinematics - Projectile Motion
+model:rayleigh| Rayleigh Criterion
+model:satellite | Geostationary Satellite

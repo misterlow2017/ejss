@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Module>
+<ModulePrefs
+title="satellitev3"
+author="John Low; John Low"
+description=""
+screenshot="./images/satellite_logo.PNG"
+thumbnail="./images/satellite_logo.PNG">
+<Require feature="opensocial-0.9"/>
+<Require feature="dynamic-height"/>
+</ModulePrefs>
+<Content type="html" href="satellitev3_Simulation.xhtml"/>
+</Module>

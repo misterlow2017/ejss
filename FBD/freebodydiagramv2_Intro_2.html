@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>The recommended approach to drawing Free Body Diagrams</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+<script type='text/javascript'>
+  function showhide(myDIV) {
+    var x = document.getElementById(myDIV);    
+    if (x.style.display == 'none') {
+        x.style.display = 'block';    
+		} else {     
+		x.style.display = 'none'; 	
+        }
+	}
+	$(function() {
+    $('a').click(function() {
+        $(this).find('i').toggleClass('fa-minus-circle fa-plus-circle');
+    });
+});
+    </script>
+</head>
+ <body>
+ <h3>THE HIGHLIGHT APPROACH</h3>
+ 
+   <h4><a href='#' onclick='showhide("S1")'><span><i class='fa fa-plus-circle fa-x'></i></span></a>STEP ONE: Sketch the figure</h4>
+    
+    <div id='S1' style= 'display:none;color:red' > First, we represent the problem/situation as a simple drawing.
+</div> 
+
+   <h4><a href='#' onclick='showhide("S2")'><span><i class='fa fa-plus-circle fa-x'></i></span></a>STEP TWO: Choose and isolate</h4>
+    
+    <div id='S2' style= 'display:none;color:red' > Next, we choose one object for which the FBD will be drawn.   We need a separate FBD for each object.
+</div>
+
+   <h4><a href='#' onclick='showhide("S3")'><span><i class='fa fa-plus-circle fa-x'></i></span></a>STEP THREE: Find and highlight the contact points</h4>
+    
+    <div id='S3' style= 'display:none;color:red' > Determine all the contact points and/or surfaces that block A makes with other objects. 
+	Then, make a mental model to highlight all the contact points and surfaces for block A.
+</div>
+
+   <h4><a href='#' onclick='showhide("S4")'><span><i class='fa fa-plus-circle fa-x'></i></span></a>STEP Four: Identify and label contact forces</h4>
+    
+    <div id='S4' style= 'display:none;color:red' > In the figure above, all the places of contact for block A are highlighted in yellow.
+	The point of contact between the hand and block A, the applied force is directed towards the right.
+	Between the contact surfaces of the block A and the table, the table exerts a normal reaction force on the block A.
+	Between the contact surfaces of block A and block B, block B offers a resisting force on block A towards the left.
+</div>
+
+   <h4><a href='#' onclick='showhide("S5")'><span><i class='fa fa-plus-circle fa-x'></i></span></a>STEP FIVE: Draw the non contact forces</h4>
+    
+    <div id='S5' style= 'display:none;color:red' > Determine all the non contact forces such as gravitational forces, magnetic force, etc that is acting on block A.  
+	In this case, the only non contact force acting on block A is the gravitational force.
+</div>
+
+<p><u>Reference</u></p>
+<p> Lee, A. (2017). Helping Students Draw Correct Free-Body Diagrams. <i>The Physics Teacher</i>, 55(8), 485-487. doi:10.1119/1.5008345 </p>

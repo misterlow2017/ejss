@@ -1,0 +1,29 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 171013. Visit http://www.um.es/fem/Ejs
+title: Kinematics - Projectile Motion 
+logo-image: images/projmotion.PNG
+author: John Low
+copyright: 
+preferred-width: 800
+preferred-height: 600
+author-image: images/john_logo.png
+source: projectile4.ejss
+main-script: 
+main-simulation: projectile4_Simulation.xhtml
+available-languages: 
+html-description: projectile4_Intro_3.html
+html-description: projectile4_Intro_1.html
+html-contents: projectile4_Contents.xhtml
+html-main: projectile4.xhtml
+page-title: Introduction
+page-index: projectile4_Intro_1.html
+page-title: Evaluation
+page-index: projectile4_Intro_3.html
+page-title: Kinematics - Projectile Motion
+page-index: projectile4_Simulation.xhtml
+resource: cannon.png
+resource: images/landscape.jpg
+resource: images/projmotion.PNG
+resource: images/boom.png
+resource: images/armouredtank.png
+resource: topmenu.html
+resource: images/john_logo.png

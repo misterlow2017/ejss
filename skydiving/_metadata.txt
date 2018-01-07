@@ -1,0 +1,33 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 171013. Visit http://www.um.es/fem/Ejs
+title: Skydiving
+logo-image: images/skydiving_logo.PNG
+author: John Low
+copyright: 
+preferred-width: 800
+preferred-height: 600
+author-image: images/john_logo.png
+source: skydivingv3.ejss
+main-script: 
+main-simulation: skydivingv3_Simulation.xhtml
+available-languages: 
+html-description: skydivingv3_Intro_3.html
+html-description: skydivingv3_Intro_2.html
+html-description: skydivingv3_Intro_1.html
+html-contents: skydivingv3_Contents.xhtml
+html-main: skydivingv3.xhtml
+page-title: Introduction
+page-index: skydivingv3_Intro_1.html
+page-title: Practice
+page-index: skydivingv3_Intro_2.html
+page-title: Quiz
+page-index: skydivingv3_Intro_3.html
+page-title: Skydiving
+page-index: skydivingv3_Simulation.xhtml
+resource: videos/The Physics of Skydiving.mp4
+resource: images/NJC2017Q8.PNG
+resource: images/skydiver2.PNG
+resource: images/skydiver.png
+resource: images/parachute.png
+resource: images/skydiving_logo.PNG
+resource: images/john_logo.png
+resource: images/scene.JPG

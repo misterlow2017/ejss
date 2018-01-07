@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+<script type='text/javascript'>
+  function showhide(myDIV) {
+    var x = document.getElementById(myDIV);    
+    if (x.style.display == 'none') {
+        x.style.display = 'block';    
+		} else {     
+		x.style.display = 'none'; 	
+        }
+	}
+	$(function() {
+    $('a').click(function() {
+        $(this).find('i').toggleClass('fa-eye fa-eye-slash');
+    });
+});
+</script>
+
+<script type="text/javascript">
+//
+//  We wait for the onload function to show that MathJax is laoded after 
+//  the page is ready, and then use setTimeout to prove that MathJax is
+//  definitely loaded after the page is displayed and active.  MathJax is 
+//  loaded two seconds after the page is ready.
+//
+window.onload = function () {
+  setTimeout(function () {
+    var head = document.getElementsByTagName("head")[0], script;
+    script = document.createElement("script");
+    script.type = "text/x-mathjax-config";
+    script[(window.opera ? "innerHTML" : "text")] =
+      "MathJax.Hub.Config({\n" +
+      "  tex2jax: { inlineMath: [['$','$'], ['\\\\(','\\\\)']] }\n" +
+      "});"
+    head.appendChild(script);
+    script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML";
+    head.appendChild(script);
+  },2000)
+}
+</script>
+
+<style>
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    vertical-align:top;
+	border: 1px solid #dfdfdf;
+	padding:5px;
+}
+</style>
+
+</head>
+
+
+<body>
+<h4>NYJC 2017 Prelim Paper 2 Question 8</h4>
+
+
+<table>
+<tr><td></td><td></td><td>
+In 2012 skydiver Felix Baumgartner jumped out of a helium-filled balloon from a height of 39 km above sea level. His free fall of over 36 km lasted 4 minutes and 20 seconds. In this free fall, he became the first person whose speed exceeded the speed of sound 330 \(m\ s^{-1} \), without the use of an aeroplane or rocket.<br><br>
+
+During the fall, Felix Baumgartner opened his parachute at about 1500 m above sea level, when his speed is 192 \(km\ hr^{-1} \), and he landed safely 15 minutes later. All height and speeds were recorded by GPS.<br><br>
+
+Some data on the air atmosphere and helium is collected and given in Fig. 8.1.<br><br><center>
+<table  >
+<tr><th></th><th align="center">	<b>sea level	</b></th><th align="center"><b>39 km above sea level</b></th></tr>
+<tr><td>Temperature of atmosphere / \(^oC \)</td><td align="center">	15 </td><td align="center">	-25</td></tr>
+<tr><td>Atmospheric pressure / Pa</td><td align="center" >	101 000 </td><td align="center">	318</td></tr>
+<tr><td>Air density 	</td><td align="center">-</td><td align="center">	0.00447</td></tr>
+<tr><td>Helium density / \(kg\ m^{-3} \)</td><td align="center">	-	</td><td align="center">0.00065</td></tr>
+
+</table> Fig.8.1</center><br><br>
+
+</td></tr>
+
+
+<tr><td>(a)</td><td></td><td>
+
+Using data given in Fig. 8.1, determine the minimum volume of helium required in the balloon <i>at sea level</i>, for a skydiver in the helium-filled balloon to reach a height of  39 km above sea level at constant speed. Assume that the total mass of the skydiver and the helium-filled balloon is 3140 kg, and that helium behaves as an ideal gas.<br>
+
+</td></tr>
+
+
+<tr><td>
+ <a href='#A1' onclick='showhide("A1")'> <i class='fa fa-eye fa-x'></i></a></td><td></td><td>
+   <div id='A1' style= 'display:none;color:red' > 
+\( \sum F \)= 0 (since speed is constant)<br><br>
+Upthrust  – weight of skydiver = 0<br><br>
+V(0.00447)g – 3140g = 0<br><br>
+V = 7.02 \(\times  10^5 \ m^3 \)<br><br>
+
+\( \frac{P_1V_1}{T_1} = \frac{P_2V_2}{T_2} \Rightarrow \frac{101000\ V_1}{15+273}= \frac{318\ 7.02x10^5}{-25+273} \)<br><br>
+   
+			\( V_1 = 2600\ m^3 \) <br><br>
+
+<p>(Solution if assume weight of helium unknown)<br><br>
+\( \sum F \)= 0<br><br>
+U – 3140g – weight of helium air in balloon = 0<br><br>
+V(0.00447)g – 3140g – V(0.00065)g = 0<br><br>
+V = 8.2 \( \times  10^5 \ m^3 \)<br><br>
+
+\( \frac{P_1V_1}{T_1} = \frac{P_2V_2}{T_2} \Rightarrow \frac{101000\ V_1}{15+273}= \frac{318\ 8.2x10^5}{-25+273} \)  <br> <br>
+		 \(	V_1 = 3000\ m^3 \)  <br>
+			
+  
+   </div>
+</td></tr>
+
+
+<tr><td></td><td></td><td>
+   
+   
+   
+ Two main forces acting on the skydiver of mass m are his weight and air resistance. The air resistance F can be written as follows<br><br>
+
+					$$ F = \frac{1}{2} C_D\ A\ \rho\ v^2 $$
+
+	where \( \rho \) is the density of air, A is effective cross-sectional area and \( C_D \) is the drag coefficient.<br><br>
+</td></tr>
+
+
+<tr><td>(b)</td><td>(i)</td><td>
+		Show that the terminal speed \(v_T\) that can be achieved by the skydiver as he falls is given by<br><br>
+					 
+          $$ v_T = \sqrt{\frac{2mg}{C_DA\rho}}  $$
+
+</td></tr>
+
+
+<tr><td>
+		  
+  <a href='#A2' onclick='showhide("A2")'> <i class='fa fa-eye fa-x'></i></a></td><td></td><td>
+   <div id='A2' style= 'display:none;color:red' > 
+  
+At terminal speed, net force = 0 <br><br>
+
+F – mg = 0 <br><br>
+ mg = \(\frac{1}{2} C_D\ A\ \rho\ v_T^2 \) <br><br>
+</div>
+</td></tr>
+
+
+<tr><td></td><td>(ii)</td><td>
+Explain why the skydiver’s terminal speed will not be constant as he falls.<br><br>
+</td></tr>
+
+
+<tr><td>
+<a href='#A3' onclick='showhide("A3")'> <i class='fa fa-eye fa-x'></i></a></td><td></td><td>
+   <div id='A3' style= 'display:none;color:red' > 
+   
+   The air density will increase as he falls.<br>
+   </div>
+ </td></tr>
+
+
+<tr><td>(c)</td><td></td><td> 
+The acceleration a of the sky diver when he is falling at a speed v is given by <br><br>
+
+$$ a = g\Bigl(\frac{v^2}{v_T^2}-1) $$
+
+                                       	 
+
+The variation of the skydiver’s speed with time as he falls is shown in Fig 8.2. The terminal speed \(v_T\) based on the expression given in (b)(i) is also plotted in Fig. 8.2 (denoted by the dashed line). <br><br>
+<img src="./images/NJC2017Q8.PNG" />
+</td></tr>
+
+
+<tr><td></td><td>(i)</td><td> 
+Deduce from Fig 8.2 the duration of time when the skydiver exceeds the speed of sound during his fall.<br><br>
+</td></tr>
+
+
+<tr><td>
+<a href='#A4' onclick='showhide("A4")'> <i class='fa fa-eye fa-x'></i></a></td><td></td><td>
+   <div id='A4' style= 'display:none;color:red' > 
+ 
+Duration is about 22 – 24 s.<br>
+</div>
+</td></tr>
+
+
+<tr><td></td><td>(ii)</td><td> 
+Use Fig 8.2 to determine the total distance fallen when the sky diver reaches his maximum speed.<br>
+</td></tr>
+
+
+<tr><td>
+<a href='#A5' onclick='showhide("A5")'> <i class='fa fa-eye fa-x'></i></a></td><td></td><td>
+   <div id='A5' style= 'display:none;color:red' > 
+<p>Total distance = area under the graph</p>
+
+<p>Acceptable range = 10500 – 12500 m </p>
+</div>
+</td></tr>
+
+
+<tr><td></td><td>(iii)</td><td> 
+Using Fig. 8.2 and Equation 8.1, describe and explain the variation in the speed of the skydiver from time = 50 s to 250 s.<br>
+</td></tr>
+
+
+<tr><td>
+<a href='#A6' onclick='showhide("A6")'> <i class='fa fa-eye fa-x'></i></a></td><td></td><td>
+   <div id='A6' style= 'display:none;color:red' > 
+The speed of the skydiver is decreasing from 50 s – 200 s.  Since his speed is greater than terminal speed, based on Equation 8.1, the acceleration is negative causing his speed to decrease until \( V =V_T \). He reached an almost constant speed from 200 – 250 s	<br>
+
+</div>
+</td></tr>
+
+
+<tr><td>(d)</td><td>(i)</td><td> 
+Suggest why a helium-filled balloon is used to bring the skydiver to a height of 39 km above sea level, instead of using an aircraft. <br>
+</td></tr>
+
+
+<tr><td>
+<a href='#A7' onclick='showhide("A7")'> <i class='fa fa-eye fa-x'></i></a></td><td></td><td>
+   <div id='A7' style= 'display:none;color:red' > 
+
+The density of the air is too small to generate enough lift force at this height.<br>
+
+</div> 
+</td></tr>
+
+
+<tr><td></td><td>(ii)</td><td> 
+	Suggest a major health hazard to the skydiver at such a high attitude, even with the use of oxygen supply.<br>
+</td></tr>
+
+
+<tr><td>
+<a href='#A8' onclick='showhide("A8")'> <i class='fa fa-eye fa-x'></i></a></td><td></td><td>
+   <div id='A8' style= 'display:none;color:red' > 
+1) Due to the extreme low pressure, his blood will boil.<br>
+OR<br>
+2) Exposure to comics rays/dangerous radiation causing cancers.<br>
+3) Unknown virus from space.<br>
+
+</div>
+</td></tr>
+
+
+</table>
+
+</body>
+</html>

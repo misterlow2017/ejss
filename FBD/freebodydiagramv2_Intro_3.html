@@ -1,0 +1,141 @@
+<html>
+<head>
+<title>The recommended approach to drawing Free Body Diagrams</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+<script type='text/javascript'>
+  function showhide(myDIV) {
+    var x = document.getElementById(myDIV);    
+    if (x.style.display == 'none') {
+        x.style.display = 'block';    
+		} else {     
+		x.style.display = 'none'; 	
+        }
+	}
+	$(function() {
+    $('a').click(function() {
+        $(this).find('i').toggleClass('fa-eye fa-eye-slash');
+    });
+});
+    </script>
+	
+	
+	
+<style>
+#fbds {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#fbds td, #fbds th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#fbds tr:nth-child(even){background-color: #f2f2f2;}
+
+#fbds tr:hover {background-color: #ddd;}
+
+#fbds th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+</style>
+</head>
+	
+	
+	
+</head>
+ <body>
+ <h4>Sketch the FBD for the stone in the following situations</h4>
+
+ 
+ <table  id="fbds">
+<tr><th width="50%">Situation</th><th width="50%">Free Body Diagram</th></tr>
+
+ <tr><td><p>1.  Equilibrium</p><p><img src="./images/lm2.PNG" />
+ <a href='#A2' onclick='showhide("A2")'><span> <i class='fa fa-eye fa-2x'></i></span></a></p></td><td>
+   <div id='A2' style= 'display:none;color:red' > 
+<img src="./images/lm2sol.PNG" /></div></td></tr>
+
+ <tr><td><p>2.  Friction prevents sliding</p><p><img src="./images/lm3.PNG" />
+ <a href='#A3' onclick='showhide("A3")'> <i class='fa fa-eye fa-2x'></i></a></p></td><td>
+   <div id='A3' style= 'display:none;color:red' > 
+<img src="./images/lm3sol.PNG" /></div></td></tr>
+
+
+ <tr><td><p>3. Equilibrium</p><p><img src="./images/lm5.PNG" />
+ <a href='#A5' onclick='showhide("A5")'> <i class='fa fa-eye fa-2x'></i></a></p></td><td>
+   <div id='A5' style= 'display:none;color:red' > 
+<img src="./images/lm5sol.PNG" /></div></td></tr>
+
+ <tr><td><p>4. Equilibrium</p><p><img src="./images/lm6.PNG" />
+ <a href='#A6' onclick='showhide("A6")'> <i class='fa fa-eye fa-2x'></i></a></p></td><td>
+   <div id='A6' style= 'display:none;color:red' > 
+<img src="./images/lm6sol.PNG" /></div></td></tr>
+
+ <tr><td><p>5. Equilibrium</p><p><img src="./images/lm7.PNG" />
+ <a href='#A7' onclick='showhide("A7")'> <i class='fa fa-eye fa-2x'></i></a></p></td><td>
+   <div id='A7' style= 'display:none;color:red' > 
+<img src="./images/lm7sol.PNG" /></div></td></tr>
+
+
+ <tr><td><p>6. Equilibrium</p><p><img src="./images/lm8.PNG" />
+ <a href='#A8' onclick='showhide("A8")'> <i class='fa fa-eye fa-2x'></i></a></p></td><td>
+   <div id='A8' style= 'display:none;color:red' > 
+<img src="./images/lm8sol.PNG" /></div></td></tr>
+
+
+ <tr><td><p>7. Rock sliding on a frictionless incline</p><p><img src="./images/lm9.PNG" />
+ <a href='#A9' onclick='showhide("A9")'> <i class='fa fa-eye fa-2x'></i></a></p></td><td>
+   <div id='A9' style= 'display:none;color:red' > 
+<img src="./images/lm9sol.PNG" /></div></td></tr>
+
+
+ <tr><td><p>8. Rock is falling. No friction</p><p><img src="./images/lm10.PNG" />
+ <a href='#A11' onclick='showhide("A10")'> <i class='fa fa-eye fa-2x'></i></a></p></td><td>
+   <div id='A10' style= 'display:none;color:red' > 
+<img src="./images/lm10sol.PNG" /></div></td></tr>
+
+ <tr><td><p>9. Rock is sliding at constant speed on a frictionless surface</p><p><img src="./images/lm11.PNG" />
+ <a href='#' onclick='showhide("A11")'> <i class='fa fa-eye fa-2x'></i></a></p></td><td>
+   <div id='A11' style= 'display:none;color:red' > 
+<img src="./images/lm11sol.PNG" /></div></td></tr>
+
+
+ <tr><td><p>10. Rock is falling at a constant (terminal) velocity</p><p><img src="./images/lm12.PNG" />
+ <a href='#A12' onclick='showhide("A12")'> <i class='fa fa-eye fa-2x'></i></a></p></td><td>
+   <div id='A12' style= 'display:none;color:red' > 
+<img src="./images/lm12sol.PNG" /></div></td></tr>
+
+ <tr><td><p>11. Rock is decelerating because of kinetic friction</p><p><img src="./images/lm13.PNG" />
+ <a href='#A13' onclick='showhide("A13")'> <i class='fa fa-eye fa-2x'></i></a></p></td><td>
+   <div id='A13' style= 'display:none;color:red' > 
+<img src="./images/lm13sol.PNG" /></div></td></tr>
+
+ <tr><td><p>12. Rock is rising in a parabolic trajectory (no friction) </p><p><img src="./images/lm14.PNG" />
+ <a href='#A14' onclick='showhide("A14")'> <i class='fa fa-eye fa-2x'></i></a></p></td><td>
+   <div id='A14' style= 'display:none;color:red' > 
+<img src="./images/lm14sol.PNG" /></div></td></tr>
+
+ <tr><td><p>13. Rock is tied to a rope and pulled straight upward, accelerating at 9.8 m s-2. No friction.</p><p><img src="./images/lm16.PNG" />
+ <a href='#A16' onclick='showhide("A16")'> <i class='fa fa-eye fa-2x'></i></a></p></td><td>
+   <div id='A16' style= 'display:none;color:red' > 
+<img src="./images/lm16sol.PNG" /></div></td></tr>
+
+<tr><td><p>14. Rock is tied to a rope and pulled so that it moves horizontally at constant velocity (There must be friction) </p><p><img src="./images/lm17.PNG" />
+ <a href='#A17' onclick='showhide("A17")'> <i class='fa fa-eye fa-2x'></i></a></p></td><td>
+   <div id='A17' style= 'display:none;color:red' > 
+<img src="./images/lm17sol.PNG" /></div></td></tr>
+
+<tr><td><p>15. Rock is tied to a rope and pulled so that it accelerates horizontally at 2g. No friction.</p><p><img src="./images/lm18.PNG" />
+ <a href='#A18' onclick='showhide("A18")'> <i class='fa fa-eye fa-2x'></i></a></p></td><td>
+   <div id='A18' style= 'display:none;color:red' > 
+<img src="./images/lm18sol.PNG" /></div></td></tr>
+
+
+</table>

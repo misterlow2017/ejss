@@ -1,0 +1,67 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 171013. Visit http://www.um.es/fem/Ejs
+title: Drawing Free Body Diagram
+logo-image: images/FBDlogo.PNG
+author: John Low
+copyright: 
+preferred-width: 800
+preferred-height: 600
+author-image: images/john_logo.png
+source: freebodydiagramv2.ejss
+main-script: 
+main-simulation: freebodydiagramv2_Simulation.xhtml
+available-languages: 
+html-description: freebodydiagramv2_Intro_3.html
+html-description: freebodydiagramv2_Intro_2.html
+html-description: freebodydiagramv2_Intro_1.html
+html-contents: freebodydiagramv2_Contents.xhtml
+html-main: freebodydiagramv2.xhtml
+page-title: Introduction
+page-index: freebodydiagramv2_Intro_1.html
+page-title: Method
+page-index: freebodydiagramv2_Intro_2.html
+page-title: Exercise
+page-index: freebodydiagramv2_Intro_3.html
+page-title: Drawing Free Body Diagram
+page-index: freebodydiagramv2_Simulation.xhtml
+resource: images/lm9sol.PNG
+resource: images/FBDlogo.PNG
+resource: images/lm16.PNG
+resource: images/lm8sol.PNG
+resource: images/lm10sol.PNG
+resource: images/lm6.PNG
+resource: images/lm5sol.PNG
+resource: images/lm6sol.PNG
+resource: images/lm11sol.PNG
+resource: images/lm12sol.PNG
+resource: images/lm2.PNG
+resource: images/lm3sol.PNG
+resource: images/lm7sol.PNG
+resource: images/lm12.PNG
+resource: images/boxbonboxa.PNG
+resource: images/box.png
+resource: images/lm2sol.PNG
+resource: images/earthonboxa.PNG
+resource: images/lm10.PNG
+resource: images/groundonboxa.PNG
+resource: images/lm11.PNG
+resource: images/lm5.PNG
+resource: images/box2.png
+resource: images/boxaonboxb.PNG
+resource: images/lm9.PNG
+resource: images/finger.JPG
+resource: images/earthonboxb.PNG
+resource: images/handonboxa.PNG
+resource: images/groundonboxb.PNG
+resource: images/lm18.PNG
+resource: images/lm16sol.PNG
+resource: images/lm17sol.PNG
+resource: images/lm18sol.PNG
+resource: images/lm14.PNG
+resource: images/john_logo.png
+resource: images/lm14sol.PNG
+resource: images/lm13sol.PNG
+resource: images/lm8.PNG
+resource: images/lm17.PNG
+resource: images/lm7.PNG
+resource: images/lm13.PNG
+resource: images/lm3.PNG

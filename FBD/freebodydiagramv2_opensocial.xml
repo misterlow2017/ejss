@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Module>
+<ModulePrefs
+title="freebodydiagramv2"
+author="John Low"
+description=""
+screenshot="./images/FBDlogo.PNG"
+thumbnail="./images/FBDlogo.PNG">
+<Require feature="opensocial-0.9"/>
+<Require feature="dynamic-height"/>
+</ModulePrefs>
+<Content type="html" href="freebodydiagramv2_Simulation.xhtml"/>
+</Module>

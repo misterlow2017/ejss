@@ -1,29 +1,28 @@
 generated-with: Easy Java/Javascript Simulations, version 5.2, build 171013. Visit http://www.um.es/fem/Ejs
-title: Kinematics - Projectile Motion 
-logo-image: images/projmotion.PNG
+title: Simple Projectile Motion
+logo-image: images/simpleproj.PNG
 author: John Low
 copyright: 
 preferred-width: 800
 preferred-height: 600
 author-image: images/john_logo.png
-source: projectile4.ejss
+source: simpleprojectile2.ejss
 main-script: 
-main-simulation: projectile4_Simulation.xhtml
+main-simulation: simpleprojectile2_Simulation.xhtml
 available-languages: 
-html-description: projectile4_Intro_3.html
-html-description: projectile4_Intro_1.html
-html-contents: projectile4_Contents.xhtml
-html-main: projectile4.xhtml
+html-description: simpleprojectile2_Intro_3.html
+html-description: simpleprojectile2_Intro_2.html
+html-description: simpleprojectile2_Intro_1.html
+html-contents: simpleprojectile2_Contents.xhtml
+html-main: simpleprojectile2.xhtml
 page-title: Introduction
-page-index: projectile4_Intro_1.html
-page-title: Evaluation
-page-index: projectile4_Intro_3.html
-page-title: Kinematics - Projectile Motion
-page-index: projectile4_Simulation.xhtml
-resource: cannon.png
-resource: images/landscape.jpg
-resource: images/projmotion.PNG
-resource: images/boom.png
-resource: images/armouredtank.png
-resource: topmenu.html
+page-index: simpleprojectile2_Intro_1.html
+page-title: Activity
+page-index: simpleprojectile2_Intro_2.html
+page-title: Quiz
+page-index: simpleprojectile2_Intro_3.html
+page-title: Simple Projectile Motion
+page-index: simpleprojectile2_Simulation.xhtml
+resource: images/simpleproj.PNG
 resource: images/john_logo.png
+resource: images/basketball.jpg

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Module>
 <ModulePrefs
-title="projectile4"
+title="simpleprojectile2"
 author="John Low"
 description=""
-screenshot="./images/projmotion.PNG"
-thumbnail="./images/projmotion.PNG">
+screenshot="./images/simpleproj.PNG"
+thumbnail="./images/simpleproj.PNG">
 <Require feature="opensocial-0.9"/>
 <Require feature="dynamic-height"/>
 </ModulePrefs>
-<Content type="html" href="projectile4_Simulation.xhtml"/>
+<Content type="html" href="simpleprojectile2_Simulation.xhtml"/>
 </Module>

@@ -898,15 +898,15 @@ var _stringProperties = {};
   drag=0.3;
 
 }); // HtmlView Page setting action 'OnCheckOn' for element 'airresistance'
-          _view.wall.setAction("OnCheckOff", function(_data,_info) {
+          _view.wall3.setAction("OnCheckOff", function(_data,_info) {
   haswall=false;
 
-}); // HtmlView Page setting action 'OnCheckOff' for element 'wall'
-          _view.wall.setAction("OnCheckOn", function(_data,_info) {
+}); // HtmlView Page setting action 'OnCheckOff' for element 'wall3'
+          _view.wall3.setAction("OnCheckOn", function(_data,_info) {
   haswall=true;
   wallx=Math.random()*5.0+3.0;
 
-}); // HtmlView Page setting action 'OnCheckOn' for element 'wall'
+}); // HtmlView Page setting action 'OnCheckOn' for element 'wall3'
           _view.play.setAction("OnClick", function(_data,_info) {
   if (!playing){
   vx=vr*Math.cos(theta*Math.PI/180);
@@ -1151,8 +1151,13 @@ function simpleprojectile2_View_0 (_topFrame) {
       .setProperty("Text","Air Resistance") // EJsS HtmlView.HtmlView Page: setting property 'Text' for element 'airresistance'
       ;
 
-    _view._9(EJSS_INTERFACE.checkBox,"wall", _view.panel42) // EJsS HtmlView.HtmlView Page: declaration of element 'wall'
-      .setProperty("Text","Hole-in-Wall Game") // EJsS HtmlView.HtmlView Page: setting property 'Text' for element 'wall'
+    _view._9(EJSS_INTERFACE.panel,"panel422", _view.panel5) // EJsS HtmlView.HtmlView Page: declaration of element 'panel422'
+      .setProperty("Height","30px") // EJsS HtmlView.HtmlView Page: setting property 'Height' for element 'panel422'
+      .setProperty("Width","100%") // EJsS HtmlView.HtmlView Page: setting property 'Width' for element 'panel422'
+      ;
+
+    _view._9(EJSS_INTERFACE.checkBox,"wall3", _view.panel422) // EJsS HtmlView.HtmlView Page: declaration of element 'wall3'
+      .setProperty("Text","Hole-in-Wall Game") // EJsS HtmlView.HtmlView Page: setting property 'Text' for element 'wall3'
       ;
 
     _view._9(EJSS_INTERFACE.button,"play", _view.panel5) // EJsS HtmlView.HtmlView Page: declaration of element 'play'

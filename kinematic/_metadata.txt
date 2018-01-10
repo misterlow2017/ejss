@@ -1,0 +1,30 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 171013. Visit http://www.um.es/fem/Ejs
+title: 
+logo-image: 
+author: Author name
+copyright: 
+preferred-width: 800
+preferred-height: 600
+author-image: 
+source: kinematic.ejss
+main-script: 
+main-simulation: kinematic_Simulation.xhtml
+available-languages: 
+html-description: kinematic_Intro_3.html
+html-description: kinematic_Intro_2.html
+html-description: kinematic_Intro_1.html
+html-contents: kinematic_Contents.xhtml
+html-main: kinematic.xhtml
+page-title: Introduction
+page-index: kinematic_Intro_1.html
+page-title: Activity
+page-index: kinematic_Intro_2.html
+page-title: Quiz
+page-index: kinematic_Intro_3.html
+page-title: Simulation
+page-index: kinematic_Simulation.xhtml
+resource: images/distance-time-graph1.gif
+resource: images/all-graphs-of-motion-1024x751.png
+resource: images/velocity-time-graph.jpg
+resource: images/building.gif
+resource: images/movingcar.png

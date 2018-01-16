@@ -1,0 +1,18 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 171013. Visit http://www.um.es/fem/Ejs
+title: 
+logo-image: 
+author: Author name
+copyright: 
+preferred-width: 800
+preferred-height: 600
+author-image: 
+source: vector2.ejss
+main-script: 
+main-simulation: vector2_Simulation.xhtml
+available-languages: 
+html-contents: vector2_Contents.xhtml
+html-main: vector2.xhtml
+page-title: Simulation
+page-index: vector2_Simulation.xhtml
+resource: images/box1.JPG
+resource: images/woodplank.png

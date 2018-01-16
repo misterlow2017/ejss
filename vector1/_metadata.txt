@@ -1,0 +1,21 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 171013. Visit http://www.um.es/fem/Ejs
+title: 
+logo-image: 
+author: Author name
+copyright: 
+preferred-width: 800
+preferred-height: 600
+author-image: 
+source: vectors.ejss
+main-script: 
+main-simulation: vectors_Simulation.xhtml
+available-languages: 
+html-description: vectors_Intro_1.html
+html-contents: vectors_Contents.xhtml
+html-main: vectors.xhtml
+page-title: vectors ops
+page-index: vectors_Simulation.xhtml
+page-title: Quiz
+page-index: vectors_Intro_1.html
+resource: images/movingcar.jpg
+resource: images/raindrop.jpg

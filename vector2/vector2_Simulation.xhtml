@@ -192,15 +192,16 @@ var _stringProperties = {};
 
   _model.addToInitialization(function() {
     if (!__pagesEnabled["Init Page"]) return;
-    incline= Math.random()*20;  // > Initialization.Init Page:1
-    //incline=30;  // > Initialization.Init Page:2
-    fangle = Math.random()*40;  // > Initialization.Init Page:3
-      // > Initialization.Init Page:4
-    fx=boxforce*Math.cos((incline+fangle)*Math.PI/180);  // > Initialization.Init Page:5
-    fy=boxforce*Math.sin((incline+fangle)*Math.PI/180);  // > Initialization.Init Page:6
-      // > Initialization.Init Page:7
-    wx=weight*Math.cos(incline*Math.PI/180);  // > Initialization.Init Page:8
-    wy=-weight*Math.sin(incline*Math.PI/180);  // > Initialization.Init Page:9
+    incline= Math.random()*20;  // > Initialization.Init Page:1
+    //incline=45;  // > Initialization.Init Page:2
+    fangle = Math.random()*40;  // > Initialization.Init Page:3
+    //fangle=45;  // > Initialization.Init Page:4
+    //fx=boxforce*Math.cos((incline+fangle)*Math.PI/180);  // > Initialization.Init Page:5
+    //fy=boxforce*Math.sin((incline+fangle)*Math.PI/180);  // > Initialization.Init Page:6
+    fx=boxforce*Math.cos((fangle)*Math.PI/180);  // > Initialization.Init Page:7
+    fy=boxforce*Math.sin((fangle)*Math.PI/180);  // > Initialization.Init Page:8
+    wx=weight*Math.cos(incline*Math.PI/180);  // > Initialization.Init Page:9
+    wy=-weight*Math.sin(incline*Math.PI/180);  // > Initialization.Init Page:10
   });
 
   _model.addToFixedRelations(function() { _isPaused = _model.isPaused(); _isPlaying = _model.isPlaying(); });
@@ -233,17 +234,17 @@ var _stringProperties = {};
         case 0:
           _view.image2.linkProperty("Transformation",  function() { return incline*Math.PI/180.; } ); // HtmlView Page linking property 'Transformation' for element 'image2'
           _view.image.linkProperty("Transformation",  function() { return incline*Math.PI/180.; } ); // HtmlView Page linking property 'Transformation' for element 'image'
-          _view.forcea.linkProperty("SizeX",  function() { return fx*0.05; } ); // HtmlView Page linking property 'SizeX' for element 'forcea'
-          _view.forcea.linkProperty("SizeY",  function() { return fy*0.05; } ); // HtmlView Page linking property 'SizeY' for element 'forcea'
+          _view.forcea.linkProperty("SizeX",  function() { return boxforce*Math.cos((incline+fangle)*Math.PI/180)*0.05; } ); // HtmlView Page linking property 'SizeX' for element 'forcea'
+          _view.forcea.linkProperty("SizeY",  function() { return boxforce*Math.sin((incline+fangle)*Math.PI/180)*0.05; } ); // HtmlView Page linking property 'SizeY' for element 'forcea'
           _view.weighta.linkProperty("SizeY",  function() { return -weight*0.05; } ); // HtmlView Page linking property 'SizeY' for element 'weighta'
-          _view.forceax.linkProperty("SizeX",  function() { return boxforce*Math.cos(fangle*Math.PI/180)*Math.cos(incline*Math.PI/180)*0.05; } ); // HtmlView Page linking property 'SizeX' for element 'forceax'
+          _view.forceax.linkProperty("SizeX",  function() { return fx*Math.cos(incline*Math.PI/180)*0.05; } ); // HtmlView Page linking property 'SizeX' for element 'forceax'
           _view.forceax.linkProperty("Attributes",  function() { return { "stroke-dasharray":"15, 10, 5, 10"  }; } ); // HtmlView Page linking property 'Attributes' for element 'forceax'
           _view.forceax.linkProperty("Visibility",  function() { return showAns; }, function(_v) { showAns = _v; } ); // HtmlView Page linking property 'Visibility' for element 'forceax'
-          _view.forceax.linkProperty("SizeY",  function() { return boxforce*Math.cos(fangle*Math.PI/180)*Math.sin(incline*Math.PI/180)*0.05; } ); // HtmlView Page linking property 'SizeY' for element 'forceax'
-          _view.forceay.linkProperty("SizeX",  function() { return -boxforce*Math.sin(fangle*Math.PI/180)*Math.sin(incline*Math.PI/180)*0.05; } ); // HtmlView Page linking property 'SizeX' for element 'forceay'
+          _view.forceax.linkProperty("SizeY",  function() { return fx*Math.sin(incline*Math.PI/180)*0.05; } ); // HtmlView Page linking property 'SizeY' for element 'forceax'
+          _view.forceay.linkProperty("SizeX",  function() { return -fy*Math.sin(incline*Math.PI/180)*0.05; } ); // HtmlView Page linking property 'SizeX' for element 'forceay'
           _view.forceay.linkProperty("Attributes",  function() { return { "stroke-dasharray":"15, 10, 5, 10"  }; } ); // HtmlView Page linking property 'Attributes' for element 'forceay'
           _view.forceay.linkProperty("Visibility",  function() { return showAns; }, function(_v) { showAns = _v; } ); // HtmlView Page linking property 'Visibility' for element 'forceay'
-          _view.forceay.linkProperty("SizeY",  function() { return boxforce*Math.sin(fangle*Math.PI/180)*Math.cos(incline*Math.PI/180)*0.05; } ); // HtmlView Page linking property 'SizeY' for element 'forceay'
+          _view.forceay.linkProperty("SizeY",  function() { return fy*Math.cos(incline*Math.PI/180)*0.05; } ); // HtmlView Page linking property 'SizeY' for element 'forceay'
           _view.weightax.linkProperty("SizeX",  function() { return -weight*Math.sin(incline*Math.PI/180)*Math.cos(incline*Math.PI/180)*0.05; } ); // HtmlView Page linking property 'SizeX' for element 'weightax'
           _view.weightax.linkProperty("Attributes",  function() { return { "stroke-dasharray":"15, 10, 5, 10"  }; } ); // HtmlView Page linking property 'Attributes' for element 'weightax'
           _view.weightax.linkProperty("Visibility",  function() { return showAns; }, function(_v) { showAns = _v; } ); // HtmlView Page linking property 'Visibility' for element 'weightax'
@@ -267,10 +268,12 @@ var _stringProperties = {};
           _view.text.linkProperty("X",  function() { return -Math.cos(incline*Math.PI/180)+0.4; } ); // HtmlView Page linking property 'X' for element 'text'
           _view.text.linkProperty("Y",  function() { return -Math.sin(incline*Math.PI/180)-0.23; } ); // HtmlView Page linking property 'Y' for element 'text'
           _view.text.linkProperty("Text",  function() { return incline.toFixed(0)+"\u00B0"; } ); // HtmlView Page linking property 'Text' for element 'text'
+          _view.text2.linkProperty("X",  function() { return 0.4*Math.cos((incline+fangle/2)*3.142/180); } ); // HtmlView Page linking property 'X' for element 'text2'
+          _view.text2.linkProperty("Y",  function() { return 0.4*Math.sin((incline+fangle/2)*3.142/180); } ); // HtmlView Page linking property 'Y' for element 'text2'
           _view.text2.linkProperty("Text",  function() { return fangle.toFixed(0)+"\u00B0"; } ); // HtmlView Page linking property 'Text' for element 'text2'
           _view.text22.linkProperty("Rotate",  function() { return (incline+fangle)*Math.PI/180; } ); // HtmlView Page linking property 'Rotate' for element 'text22'
-          _view.text22.linkProperty("X",  function() { return fx*0.03; } ); // HtmlView Page linking property 'X' for element 'text22'
-          _view.text22.linkProperty("Y",  function() { return fy*0.03; } ); // HtmlView Page linking property 'Y' for element 'text22'
+          _view.text22.linkProperty("X",  function() { return boxforce*Math.cos((incline+fangle)*Math.PI/180)*0.05; } ); // HtmlView Page linking property 'X' for element 'text22'
+          _view.text22.linkProperty("Y",  function() { return boxforce*Math.sin((incline+fangle)*Math.PI/180)*0.05; } ); // HtmlView Page linking property 'Y' for element 'text22'
           _view.text22.linkProperty("Text",  function() { return "F = "+boxforce+" N"; } ); // HtmlView Page linking property 'Text' for element 'text22'
           _view.text222.linkProperty("Rotate",  function() { return 90*Math.PI/180; } ); // HtmlView Page linking property 'Rotate' for element 'text222'
           _view.text222.linkProperty("Y",  function() { return -weight*0.03; } ); // HtmlView Page linking property 'Y' for element 'text222'
@@ -288,7 +291,7 @@ var _stringProperties = {};
           _view.text232.linkProperty("Y",  function() { return -weight*Math.cos(incline*Math.PI/180)*Math.cos(incline*Math.PI/180)*0.055; } ); // HtmlView Page linking property 'Y' for element 'text232'
           _view.text232.linkProperty("Visibility",  function() { return showAns; }, function(_v) { showAns = _v; } ); // HtmlView Page linking property 'Visibility' for element 'text232'
           _view.group.linkProperty("Transformation",  function() { return incline*Math.PI/180; } ); // HtmlView Page linking property 'Transformation' for element 'group'
-          _view.answer.linkProperty("Text",  function() { return "F\u1d67 = "+fy.toFixed(1)+" N\nF\u2093 = "+fx.toFixed(1)+" N\nW\u1d67 = -"+wx.toFixed(1)+" N\nW\u2093 = "+wy.toFixed(1)+" N"; } ); // HtmlView Page linking property 'Text' for element 'answer'
+          _view.answer.linkProperty("Text",  function() { return "F\u1d67 = "+fy.toPrecision(3)+" N\nF\u2093 = "+fx.toPrecision(3)+" N\nW\u1d67 = -"+wx.toPrecision(3)+" N\nW\u2093 = "+wy.toPrecision(3)+" N"; } ); // HtmlView Page linking property 'Text' for element 'answer'
           _view.answer.linkProperty("Visibility",  function() { return showAns; }, function(_v) { showAns = _v; } ); // HtmlView Page linking property 'Visibility' for element 'answer'
           _view.checkBox.linkProperty("Checked",  function() { return showAns; }, function(_v) { showAns = _v; } ); // HtmlView Page linking property 'Checked' for element 'checkBox'
           _view.resetButton.setAction("OnClick", _reset); // HtmlView Page setting action 'OnClick' for element 'resetButton'
@@ -455,13 +458,11 @@ function vector2_View_0 (_topFrame) {
       ;
 
     _view._9(EJSS_DRAWING2D.text,"text2", _view.drawingPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'text2'
-      .setProperty("X",0.4) // EJsS HtmlView.HtmlView Page: setting property 'X' for element 'text2'
-      .setProperty("Y",0.1) // EJsS HtmlView.HtmlView Page: setting property 'Y' for element 'text2'
       .setProperty("Font","normal bold 14px ") // EJsS HtmlView.HtmlView Page: setting property 'Font' for element 'text2'
       ;
 
     _view._9(EJSS_DRAWING2D.text,"text22", _view.drawingPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'text22'
-      .setProperty("RelativePosition","SOUTH") // EJsS HtmlView.HtmlView Page: setting property 'RelativePosition' for element 'text22'
+      .setProperty("RelativePosition","SOUTH_WEST") // EJsS HtmlView.HtmlView Page: setting property 'RelativePosition' for element 'text22'
       .setProperty("Font","normal bold 14px ") // EJsS HtmlView.HtmlView Page: setting property 'Font' for element 'text22'
       ;
 
@@ -533,7 +534,7 @@ function vector2_View_0 (_topFrame) {
       .setProperty("RelativePosition","SOUTH") // EJsS HtmlView.HtmlView Page: setting property 'RelativePosition' for element 'answer'
       .setProperty("X",0) // EJsS HtmlView.HtmlView Page: setting property 'X' for element 'answer'
       .setProperty("Y",0.5) // EJsS HtmlView.HtmlView Page: setting property 'Y' for element 'answer'
-      .setProperty("Font","normal bold 12px Arial, Helvetica, sans-serif") // EJsS HtmlView.HtmlView Page: setting property 'Font' for element 'answer'
+      .setProperty("Font","normal normal 14px Arial, Helvetica, sans-serif") // EJsS HtmlView.HtmlView Page: setting property 'Font' for element 'answer'
       ;
 
     _view._9(EJSS_INTERFACE.panel,"controlPanel", _view.wrappedPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'controlPanel'
@@ -561,7 +562,7 @@ function vector2_View_0 (_topFrame) {
       ;
 
     _view._9(EJSS_INTERFACE.panel,"narrativePanel", _view.singleDrawingPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'narrativePanel'
-      .setProperty("Html","<h2>Resolving vectors parallel and perpendicular to incline</h2> <p>In subsequent topics, you will need to solve problems that require the resolution of vectors to 2 component directions. In dynamics, one direction may be where motion occurs.  In equilibrium problems, the  sum of component in each direction would be zero.</p> <p>Here you can practise resolving vectors into two  perpendicular (orthogonal) directions namely in the direction of the incline and perpendicular to the incline.</p> <p>The x-direction is chosen to be parallel to the incline and  the y-direction is chosen to be perpendicular to the incline. It is also important to fix the sign of the two component directions.  Here we choose the upward and rightward directions to be positive.</p> <p>A box is placed on an incline at angle &#952; (ignore friction) and acted upon by two forces, namely gravity and an applied force at the specified  direction to the incline.  Calculate the vector components of F and W along and perpendicular to the incline.  Check your answer by pressing the checkbox to show the answer.  Click on the  reset button to create a new scenario.  Do this until you are confident of your skills.</p>") // EJsS HtmlView.HtmlView Page: setting property 'Html' for element 'narrativePanel'
+      .setProperty("Html","<h2>Resolving vectors parallel and perpendicular to incline</h2> <p>In subsequent topics, you will need to solve problems that require the resolution of vectors to 2 component directions. In dynamics, one of the directions is usually chosen to be parallel to  in the same direction as the motion.  In equilibrium problems where there is no  net motion, the sum of the component of the forces in each direction must be zero.</p> <p>Here you can practise resolving vectors into two  perpendicular (orthogonal) directions namely in the direction of the incline and perpendicular to the incline.</p> <p>The x-direction is chosen to be parallel to the incline and  the y-direction is chosen to be perpendicular to the incline. It is also important to fix the sign of the two component directions.  Here we choose the upward and rightward directions to be positive.</p> <p>A box is placed on an incline at angle &#952; (ignore friction) and acted upon by two forces, namely gravity and an applied force at the specified  direction to the incline.  Calculate the vector components of F and W along and perpendicular to the incline.  Check your answer by pressing the checkbox to show the answer.  Click on the  reset button to create a new scenario.  Do this until you are confident of your skills.</p>") // EJsS HtmlView.HtmlView Page: setting property 'Html' for element 'narrativePanel'
       ;
 
   };

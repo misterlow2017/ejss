@@ -231,7 +231,7 @@ var _stringProperties = {};
     vyrain=10*Math.cos(theta*Math.PI/180.0);  // > Initialization.Init Page:4
     //alert("angle "+(theta*180/3.142).toFixed(1));  // > Initialization.Init Page:5
     vxcar=Math.random()*5.0+12.0;  // > Initialization.Init Page:6
-    beta=-Math.atan((vxcar-vxrain)/vyrain)*180/Math.PI;  // > Initialization.Init Page:7
+    beta=Math.atan((-vxcar+vxrain)/vyrain)*180/Math.PI;  // > Initialization.Init Page:7
     vr=Math.sqrt(Math.pow((vxcar-vxrain),2)+Math.pow(vyrain,2));  // > Initialization.Init Page:8
   });
 
@@ -283,6 +283,12 @@ var _stringProperties = {};
           _view.arrow2.linkProperty("SizeY",  function() { return -vyrain*0.05; } ); // Vector Ops linking property 'SizeY' for element 'arrow2'
           _view.analyticCurve.linkProperty("Minimum",  function() { return theta<0?180+theta:180; } ); // Vector Ops linking property 'Minimum' for element 'analyticCurve'
           _view.analyticCurve.linkProperty("Maximum",  function() { return theta<0?180:180+theta; } ); // Vector Ops linking property 'Maximum' for element 'analyticCurve'
+          _view.text22.linkProperty("Rotate",  function() { return (theta+90)*Math.PI/180; } ); // Vector Ops linking property 'Rotate' for element 'text22'
+          _view.text22.linkProperty("X",  function() { return vxrain*0.05; } ); // Vector Ops linking property 'X' for element 'text22'
+          _view.text22.linkProperty("Y",  function() { return 1-vyrain*0.05; } ); // Vector Ops linking property 'Y' for element 'text22'
+          _view.text23.linkProperty("X",  function() { return 0.4*Math.sin(theta/2*3.142/180); } ); // Vector Ops linking property 'X' for element 'text23'
+          _view.text23.linkProperty("Y",  function() { return 1-0.4*Math.cos(theta/2*3.142/180); } ); // Vector Ops linking property 'Y' for element 'text23'
+          _view.text23.linkProperty("Text",  function() { return theta.toFixed(0)+"\u00B0"; } ); // Vector Ops linking property 'Text' for element 'text23'
           _view.group4.linkProperty("Visibility",  function() { return showAns; }, function(_v) { showAns = _v; } ); // Vector Ops linking property 'Visibility' for element 'group4'
           _view.arrow3.linkProperty("SizeX",  function() { return vxcar*0.05; } ); // Vector Ops linking property 'SizeX' for element 'arrow3'
           _view.text2222.linkProperty("X",  function() { return vxcar*0.02; } ); // Vector Ops linking property 'X' for element 'text2222'
@@ -369,9 +375,12 @@ function vectors_View_0 (_topFrame) {
       .setProperty("Width",400) // EJsS HtmlView.Vector Ops: setting property 'Width' for element 'plottingPanel'
       .setProperty("MinimumX",-1) // EJsS HtmlView.Vector Ops: setting property 'MinimumX' for element 'plottingPanel'
       .setProperty("MinimumY",-1) // EJsS HtmlView.Vector Ops: setting property 'MinimumY' for element 'plottingPanel'
+      .setProperty("TitleY","") // EJsS HtmlView.Vector Ops: setting property 'TitleY' for element 'plottingPanel'
       .setProperty("AutoScaleY",false) // EJsS HtmlView.Vector Ops: setting property 'AutoScaleY' for element 'plottingPanel'
+      .setProperty("TitleX","") // EJsS HtmlView.Vector Ops: setting property 'TitleX' for element 'plottingPanel'
       .setProperty("AutoScaleX",false) // EJsS HtmlView.Vector Ops: setting property 'AutoScaleX' for element 'plottingPanel'
       .setProperty("Enabled",true) // EJsS HtmlView.Vector Ops: setting property 'Enabled' for element 'plottingPanel'
+      .setProperty("Title","Relative velocity") // EJsS HtmlView.Vector Ops: setting property 'Title' for element 'plottingPanel'
       .setProperty("MaximumY",1) // EJsS HtmlView.Vector Ops: setting property 'MaximumY' for element 'plottingPanel'
       .setProperty("MaximumX",1) // EJsS HtmlView.Vector Ops: setting property 'MaximumX' for element 'plottingPanel'
       ;
@@ -471,10 +480,13 @@ function vectors_View_0 (_topFrame) {
       ;
 
     _view._9(EJSS_DRAWING2D.text,"text22", _view.group) // EJsS HtmlView.Vector Ops: declaration of element 'text22'
-      .setProperty("X",0) // EJsS HtmlView.Vector Ops: setting property 'X' for element 'text22'
-      .setProperty("Y",0.25) // EJsS HtmlView.Vector Ops: setting property 'Y' for element 'text22'
+      .setProperty("RelativePosition","NORTH_EAST") // EJsS HtmlView.Vector Ops: setting property 'RelativePosition' for element 'text22'
       .setProperty("Text","vrain") // EJsS HtmlView.Vector Ops: setting property 'Text' for element 'text22'
       .setProperty("Font","normal bold 14px Arial, Helvetica, sans-serif") // EJsS HtmlView.Vector Ops: setting property 'Font' for element 'text22'
+      ;
+
+    _view._9(EJSS_DRAWING2D.text,"text23", _view.plottingPanel) // EJsS HtmlView.Vector Ops: declaration of element 'text23'
+      .setProperty("Font","normal bold 14px Arial, Helvetica, sans-serif") // EJsS HtmlView.Vector Ops: setting property 'Font' for element 'text23'
       ;
 
     _view._9(EJSS_INTERFACE.wrappedPanel,"wrappedPanel2", _view.wrappedPanel) // EJsS HtmlView.Vector Ops: declaration of element 'wrappedPanel2'
@@ -486,9 +498,12 @@ function vectors_View_0 (_topFrame) {
       .setProperty("Width",300) // EJsS HtmlView.Vector Ops: setting property 'Width' for element 'plottingPanel2'
       .setProperty("MinimumX",-1) // EJsS HtmlView.Vector Ops: setting property 'MinimumX' for element 'plottingPanel2'
       .setProperty("MinimumY",-1) // EJsS HtmlView.Vector Ops: setting property 'MinimumY' for element 'plottingPanel2'
+      .setProperty("TitleY","") // EJsS HtmlView.Vector Ops: setting property 'TitleY' for element 'plottingPanel2'
       .setProperty("AutoScaleY",false) // EJsS HtmlView.Vector Ops: setting property 'AutoScaleY' for element 'plottingPanel2'
+      .setProperty("TitleX","") // EJsS HtmlView.Vector Ops: setting property 'TitleX' for element 'plottingPanel2'
       .setProperty("AutoScaleX",false) // EJsS HtmlView.Vector Ops: setting property 'AutoScaleX' for element 'plottingPanel2'
       .setProperty("Enabled",true) // EJsS HtmlView.Vector Ops: setting property 'Enabled' for element 'plottingPanel2'
+      .setProperty("Title","Solution") // EJsS HtmlView.Vector Ops: setting property 'Title' for element 'plottingPanel2'
       .setProperty("MaximumY",1) // EJsS HtmlView.Vector Ops: setting property 'MaximumY' for element 'plottingPanel2'
       .setProperty("MaximumX",1) // EJsS HtmlView.Vector Ops: setting property 'MaximumX' for element 'plottingPanel2'
       ;

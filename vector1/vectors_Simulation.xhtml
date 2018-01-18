@@ -226,7 +226,7 @@ var _stringProperties = {};
   _model.addToInitialization(function() {
     if (!__pagesEnabled["Init Page"]) return;
     //terminal fall speed of rain drop ~ 10 m/s  // > Initialization.Init Page:1
-    theta=(Math.random()-0.5)*45;  // > Initialization.Init Page:2
+    theta=Math.ceil((Math.random()-0.5)*45);  // > Initialization.Init Page:2
     vxrain=10*Math.sin(theta*Math.PI/180.0);  // > Initialization.Init Page:3
     vyrain=10*Math.cos(theta*Math.PI/180.0);  // > Initialization.Init Page:4
     //alert("angle "+(theta*180/3.142).toFixed(1));  // > Initialization.Init Page:5
@@ -272,7 +272,7 @@ var _stringProperties = {};
           _view.arrow.linkProperty("SizeX",  function() { return vxcar*0.05; } ); // Vector Ops linking property 'SizeX' for element 'arrow'
           _view.arrow.linkProperty("MarkStart",  function() { return flipcararrow?"INVTRIANGLE":"NONE"; } ); // Vector Ops linking property 'MarkStart' for element 'arrow'
           _view.text2.linkProperty("X",  function() { return vxcar*0.03; } ); // Vector Ops linking property 'X' for element 'text2'
-          _view.text.linkProperty("Text",  function() { return "Rain falls at terminal speed 10 m/s\nat "+theta.toFixed(1)+" deg to vertical.\nCar moving at "+vxcar.toFixed(1)+" m/s to the right.\nWhat is the relative speed of the rain\nas observed by the driver?"; } ); // Vector Ops linking property 'Text' for element 'text'
+          _view.text.linkProperty("Text",  function() { return "The rain falls at terminal speed 10 m/s\nat "+theta.toFixed(0)+"\u00B0 to the vertical.\nThe car is moving at "+vxcar.toFixed(1)+" m/s to the right.\nWhat is the relative speed of the rain\nas observed by the driver?"; } ); // Vector Ops linking property 'Text' for element 'text'
           _view.arrow2.setAction("OnDoubleClick", function(_data,_info) {
   fliprainarrow=!fliprainarrow;
 
@@ -307,7 +307,7 @@ var _stringProperties = {};
           _view.analyticCurve22.linkProperty("Y",  function() { return vyrain*0.05; } ); // Vector Ops linking property 'Y' for element 'analyticCurve22'
           _view.segment22.linkProperty("X",  function() { return vxcar*0.05-vxrain*0.05; } ); // Vector Ops linking property 'X' for element 'segment22'
           _view.segment22.linkProperty("Y",  function() { return vyrain*0.05; } ); // Vector Ops linking property 'Y' for element 'segment22'
-          _view.text3.linkProperty("Text",  function() { return "Relative speed of rain\n as observed by driver is\n"+vr.toFixed(1)+" m/s at "+beta.toFixed(1)+" deg\nto the vertical."; } ); // Vector Ops linking property 'Text' for element 'text3'
+          _view.text3.linkProperty("Text",  function() { return "Relative speed of rain\n as observed by driver is\n"+vr.toPrecision(3)+" m/s at "+beta.toFixed(1)+"\u00B0 \nto the vertical."; } ); // Vector Ops linking property 'Text' for element 'text3'
           _view.text3.linkProperty("Visibility",  function() { return showAns; }, function(_v) { showAns = _v; } ); // Vector Ops linking property 'Visibility' for element 'text3'
           _view.checkBox.linkProperty("Checked",  function() { return showAns; }, function(_v) { showAns = _v; } ); // Vector Ops linking property 'Checked' for element 'checkBox'
           _view.resetButton.setAction("OnClick", _reset); // Vector Ops setting action 'OnClick' for element 'resetButton'

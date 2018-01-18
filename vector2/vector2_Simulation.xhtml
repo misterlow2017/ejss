@@ -192,9 +192,9 @@ var _stringProperties = {};
 
   _model.addToInitialization(function() {
     if (!__pagesEnabled["Init Page"]) return;
-    incline= Math.random()*20;  // > Initialization.Init Page:1
+    incline= Math.ceil(Math.random()*20);  // > Initialization.Init Page:1
     //incline=45;  // > Initialization.Init Page:2
-    fangle = Math.random()*40;  // > Initialization.Init Page:3
+    fangle = Math.ceil(Math.random()*40);  // > Initialization.Init Page:3
     //fangle=45;  // > Initialization.Init Page:4
     //fx=boxforce*Math.cos((incline+fangle)*Math.PI/180);  // > Initialization.Init Page:5
     //fy=boxforce*Math.sin((incline+fangle)*Math.PI/180);  // > Initialization.Init Page:6

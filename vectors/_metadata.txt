@@ -1,0 +1,9 @@
+package:true
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 171013. Visit http://www.um.es/fem/Ejs
+title:
+logo-image:model1/
+author:Author name
+copyright:
+author-image:
+model:model1 | 
+model:model2 | 

@@ -1,0 +1,16 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 171013. Visit http://www.um.es/fem/Ejs
+title: Constant Velocity Putt-Putt
+logo-image: 
+author: Anonymous
+copyright: 
+preferred-width: 700
+preferred-height: 400
+author-image: 
+source: golftiming.ejss
+main-script: 
+main-simulation: golftiming_Simulation.xhtml
+available-languages: 
+html-contents: golftiming_Contents.xhtml
+html-main: golftiming.xhtml
+page-title: Constant Velocity Putt-Putt
+page-index: golftiming_Simulation.xhtml

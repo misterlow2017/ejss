@@ -1,0 +1,17 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 171013. Visit http://www.um.es/fem/Ejs
+title: Rope Holding a Hot Air Balloon Cargo
+logo-image: 
+author: Anonymous
+copyright: 
+preferred-width: 768
+preferred-height: 1024
+author-image: 
+source: hotairballoon.ejss
+main-script: 
+main-simulation: hotairballoon_Simulation.xhtml
+available-languages: 
+html-contents: hotairballoon_Contents.xhtml
+html-main: hotairballoon.xhtml
+page-title: Rope Holding a Hot Air Balloon Cargo
+page-index: hotairballoon_Simulation.xhtml
+resource: images/balloon_color_sm.png

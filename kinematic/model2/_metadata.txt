@@ -1,0 +1,18 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 171013. Visit http://www.um.es/fem/Ejs
+title: Purple car Catching Yellow car
+logo-image: 
+author: Anonymous
+copyright: 
+preferred-width: 768
+preferred-height: 1024
+author-image: 
+source: racingcars.ejss
+main-script: 
+main-simulation: racingcars_Simulation.xhtml
+available-languages: 
+html-contents: racingcars_Contents.xhtml
+html-main: racingcars.xhtml
+page-title: Purple car Catching Yellow car
+page-index: racingcars_Simulation.xhtml
+resource: top_view_purple_car_left.jpg
+resource: top_view_yellow_car_left.jpg

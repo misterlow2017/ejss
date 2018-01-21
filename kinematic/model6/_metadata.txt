@@ -1,0 +1,18 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 171013. Visit http://www.um.es/fem/Ejs
+title: Tennis Ball Launcher
+logo-image: 
+author: Anonymous
+copyright: 
+preferred-width: 768
+preferred-height: 1024
+author-image: 
+source: tennisball.ejss
+main-script: 
+main-simulation: tennisball_Simulation.xhtml
+available-languages: 
+html-contents: tennisball_Contents.xhtml
+html-main: tennisball.xhtml
+page-title: Tennis Ball Launcher
+page-index: tennisball_Simulation.xhtml
+resource: images/birdtree.png
+resource: images/bird.jpg

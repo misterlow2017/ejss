@@ -1,0 +1,16 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 171013. Visit http://www.um.es/fem/Ejs
+title: Golf Balls Putt Comparison
+logo-image: 
+author: Anonymous
+copyright: 
+preferred-width: 768
+preferred-height: 1024
+author-image: 
+source: golfballs2compare.ejss
+main-script: 
+main-simulation: golfballs2compare_Simulation.xhtml
+available-languages: 
+html-contents: golfballs2compare_Contents.xhtml
+html-main: golfballs2compare.xhtml
+page-title: Golf Balls Putt Comparison
+page-index: golfballs2compare_Simulation.xhtml

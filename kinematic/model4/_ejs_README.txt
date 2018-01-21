@@ -1,8 +1,6 @@
 <This document was created with EjsS version 5.2 (build 171013)>
 
-All the files and subdirectories in this directory were extracted from a compressed ZIP file, and contain several Javascript simulations and their auxiliary files, created with Easy Java(script) Simulations <http://www.um.es/fem/EjsWiki>.
-
-Each simulation (and its auxiliary files) is contained in a subdirectory called "model#", where "#" stands for the sequence order selected by the author for each simulation. Change to the subdirectory of the model that you want to run to run that simulation.
+All the files and subdirectories in this directory were extracted from a compressed ZIP file, and contain a Javascript simulation and its auxiliary files, created with Easy Java(script) Simulations <http://www.um.es/fem/EjsWiki>.
 
 A simulation directory has several HTML or XHTML files in it:
   - A main XHTML file named as the simulation.

@@ -575,12 +575,18 @@ var _stringProperties = {};
 
 }); // HtmlView Page setting action 'OnClick' for element 'reset'
           _view.pause.setAction("OnClick", _pause); // HtmlView Page setting action 'OnClick' for element 'pause'
+          _view.plottingPanel2.linkProperty("XTickStep",  function() { return Math.ceil(t/5)+1; } ); // HtmlView Page linking property 'XTickStep' for element 'plottingPanel2'
+          _view.plottingPanel2.linkProperty("YTickStep",  function() { return Math.abs(Math.ceil(sx/5))+1; } ); // HtmlView Page linking property 'YTickStep' for element 'plottingPanel2'
           _view.dragf3.linkProperty("InputX",  function() { return t; }, function(_v) { t = _v; } ); // HtmlView Page linking property 'InputX' for element 'dragf3'
           _view.dragf3.linkProperty("InputY",  function() { return sx; }, function(_v) { sx = _v; } ); // HtmlView Page linking property 'InputY' for element 'dragf3'
-          _view.plottingPanel22.linkProperty("MinimumY",  function() { return vmin-1; } ); // HtmlView Page linking property 'MinimumY' for element 'plottingPanel22'
           _view.plottingPanel22.linkProperty("MaximumY",  function() { return vmax+1; } ); // HtmlView Page linking property 'MaximumY' for element 'plottingPanel22'
+          _view.plottingPanel22.linkProperty("MinimumY",  function() { return vmin-1; } ); // HtmlView Page linking property 'MinimumY' for element 'plottingPanel22'
+          _view.plottingPanel22.linkProperty("XTickStep",  function() { return Math.ceil(t/5)+1; } ); // HtmlView Page linking property 'XTickStep' for element 'plottingPanel22'
+          _view.plottingPanel22.linkProperty("YTickStep",  function() { return Math.abs(Math.ceil(vx/5))+1; } ); // HtmlView Page linking property 'YTickStep' for element 'plottingPanel22'
           _view.dragf33.linkProperty("InputX",  function() { return t; }, function(_v) { t = _v; } ); // HtmlView Page linking property 'InputX' for element 'dragf33'
           _view.dragf33.linkProperty("InputY",  function() { return vx; }, function(_v) { vx = _v; } ); // HtmlView Page linking property 'InputY' for element 'dragf33'
+          _view.plottingPanel222.linkProperty("XTickStep",  function() { return Math.ceil(t/5)+1; } ); // HtmlView Page linking property 'XTickStep' for element 'plottingPanel222'
+          _view.plottingPanel222.linkProperty("YTickStep",  function() { return Math.abs(Math.ceil(ax/5))+1; } ); // HtmlView Page linking property 'YTickStep' for element 'plottingPanel222'
           _view.dragf332.linkProperty("InputX",  function() { return t; }, function(_v) { t = _v; } ); // HtmlView Page linking property 'InputX' for element 'dragf332'
           _view.dragf332.linkProperty("InputY",  function() { return ax; }, function(_v) { ax = _v; } ); // HtmlView Page linking property 'InputY' for element 'dragf332'
           break;
@@ -750,13 +756,19 @@ function kinematic_View_0 (_topFrame) {
 
     _view._9(EJSS_DRAWING2D.plottingPanel,"plottingPanel2", _view.rightpanel) // EJsS HtmlView.HtmlView Page: declaration of element 'plottingPanel2'
       .setProperty("Height","300px") // EJsS HtmlView.HtmlView Page: setting property 'Height' for element 'plottingPanel2'
+      .setProperty("XFixedTick",0) // EJsS HtmlView.HtmlView Page: setting property 'XFixedTick' for element 'plottingPanel2'
+      .setProperty("Title","Displacement") // EJsS HtmlView.HtmlView Page: setting property 'Title' for element 'plottingPanel2'
       .setProperty("YFixedTick",0) // EJsS HtmlView.HtmlView Page: setting property 'YFixedTick' for element 'plottingPanel2'
+      .setProperty("YAutoTicks",false) // EJsS HtmlView.HtmlView Page: setting property 'YAutoTicks' for element 'plottingPanel2'
+      .setProperty("GridYShow",true) // EJsS HtmlView.HtmlView Page: setting property 'GridYShow' for element 'plottingPanel2'
+      .setProperty("GridYLineColor","rgba(200,220,208,1)") // EJsS HtmlView.HtmlView Page: setting property 'GridYLineColor' for element 'plottingPanel2'
       .setProperty("TitleY","Displacement /m") // EJsS HtmlView.HtmlView Page: setting property 'TitleY' for element 'plottingPanel2'
       .setProperty("AutoScaleY",true) // EJsS HtmlView.HtmlView Page: setting property 'AutoScaleY' for element 'plottingPanel2'
       .setProperty("TitleX","Time /s") // EJsS HtmlView.HtmlView Page: setting property 'TitleX' for element 'plottingPanel2'
       .setProperty("AutoScaleX",true) // EJsS HtmlView.HtmlView Page: setting property 'AutoScaleX' for element 'plottingPanel2'
-      .setProperty("XFixedTick",0) // EJsS HtmlView.HtmlView Page: setting property 'XFixedTick' for element 'plottingPanel2'
-      .setProperty("Title","Displacement") // EJsS HtmlView.HtmlView Page: setting property 'Title' for element 'plottingPanel2'
+      .setProperty("XAutoTicks",false) // EJsS HtmlView.HtmlView Page: setting property 'XAutoTicks' for element 'plottingPanel2'
+      .setProperty("GridXLineColor","rgba(200,220,208,1)") // EJsS HtmlView.HtmlView Page: setting property 'GridXLineColor' for element 'plottingPanel2'
+      .setProperty("GridXShow",true) // EJsS HtmlView.HtmlView Page: setting property 'GridXShow' for element 'plottingPanel2'
       ;
 
     _view._9(EJSS_DRAWING2D.trace,"dragf3", _view.plottingPanel2) // EJsS HtmlView.HtmlView Page: declaration of element 'dragf3'
@@ -766,13 +778,19 @@ function kinematic_View_0 (_topFrame) {
 
     _view._9(EJSS_DRAWING2D.plottingPanel,"plottingPanel22", _view.rightpanel) // EJsS HtmlView.HtmlView Page: declaration of element 'plottingPanel22'
       .setProperty("Height","300px") // EJsS HtmlView.HtmlView Page: setting property 'Height' for element 'plottingPanel22'
+      .setProperty("XFixedTick",0) // EJsS HtmlView.HtmlView Page: setting property 'XFixedTick' for element 'plottingPanel22'
+      .setProperty("Title","Velocity") // EJsS HtmlView.HtmlView Page: setting property 'Title' for element 'plottingPanel22'
       .setProperty("YFixedTick",0) // EJsS HtmlView.HtmlView Page: setting property 'YFixedTick' for element 'plottingPanel22'
+      .setProperty("YAutoTicks",false) // EJsS HtmlView.HtmlView Page: setting property 'YAutoTicks' for element 'plottingPanel22'
+      .setProperty("GridYShow",true) // EJsS HtmlView.HtmlView Page: setting property 'GridYShow' for element 'plottingPanel22'
+      .setProperty("GridYLineColor","LightGray") // EJsS HtmlView.HtmlView Page: setting property 'GridYLineColor' for element 'plottingPanel22'
       .setProperty("TitleY","Velocity m/s") // EJsS HtmlView.HtmlView Page: setting property 'TitleY' for element 'plottingPanel22'
       .setProperty("AutoScaleY",true) // EJsS HtmlView.HtmlView Page: setting property 'AutoScaleY' for element 'plottingPanel22'
       .setProperty("TitleX","Time /s") // EJsS HtmlView.HtmlView Page: setting property 'TitleX' for element 'plottingPanel22'
       .setProperty("AutoScaleX",true) // EJsS HtmlView.HtmlView Page: setting property 'AutoScaleX' for element 'plottingPanel22'
-      .setProperty("XFixedTick",0) // EJsS HtmlView.HtmlView Page: setting property 'XFixedTick' for element 'plottingPanel22'
-      .setProperty("Title","Velocity") // EJsS HtmlView.HtmlView Page: setting property 'Title' for element 'plottingPanel22'
+      .setProperty("XAutoTicks",false) // EJsS HtmlView.HtmlView Page: setting property 'XAutoTicks' for element 'plottingPanel22'
+      .setProperty("GridXLineColor","rgba(200,220,208,1)") // EJsS HtmlView.HtmlView Page: setting property 'GridXLineColor' for element 'plottingPanel22'
+      .setProperty("GridXShow",true) // EJsS HtmlView.HtmlView Page: setting property 'GridXShow' for element 'plottingPanel22'
       ;
 
     _view._9(EJSS_DRAWING2D.trace,"dragf33", _view.plottingPanel22) // EJsS HtmlView.HtmlView Page: declaration of element 'dragf33'
@@ -782,15 +800,21 @@ function kinematic_View_0 (_topFrame) {
 
     _view._9(EJSS_DRAWING2D.plottingPanel,"plottingPanel222", _view.rightpanel) // EJsS HtmlView.HtmlView Page: declaration of element 'plottingPanel222'
       .setProperty("Height","300px") // EJsS HtmlView.HtmlView Page: setting property 'Height' for element 'plottingPanel222'
+      .setProperty("XFixedTick",0) // EJsS HtmlView.HtmlView Page: setting property 'XFixedTick' for element 'plottingPanel222'
+      .setProperty("Title","Acceleration") // EJsS HtmlView.HtmlView Page: setting property 'Title' for element 'plottingPanel222'
+      .setProperty("MaximumY",1) // EJsS HtmlView.HtmlView Page: setting property 'MaximumY' for element 'plottingPanel222'
       .setProperty("YFixedTick",0) // EJsS HtmlView.HtmlView Page: setting property 'YFixedTick' for element 'plottingPanel222'
+      .setProperty("YAutoTicks",false) // EJsS HtmlView.HtmlView Page: setting property 'YAutoTicks' for element 'plottingPanel222'
+      .setProperty("GridYShow",true) // EJsS HtmlView.HtmlView Page: setting property 'GridYShow' for element 'plottingPanel222'
+      .setProperty("GridYLineColor","LightGray") // EJsS HtmlView.HtmlView Page: setting property 'GridYLineColor' for element 'plottingPanel222'
       .setProperty("MinimumY",-1) // EJsS HtmlView.HtmlView Page: setting property 'MinimumY' for element 'plottingPanel222'
       .setProperty("TitleY","Acceleration m/s2") // EJsS HtmlView.HtmlView Page: setting property 'TitleY' for element 'plottingPanel222'
       .setProperty("AutoScaleY",false) // EJsS HtmlView.HtmlView Page: setting property 'AutoScaleY' for element 'plottingPanel222'
       .setProperty("TitleX","Time /s") // EJsS HtmlView.HtmlView Page: setting property 'TitleX' for element 'plottingPanel222'
       .setProperty("AutoScaleX",true) // EJsS HtmlView.HtmlView Page: setting property 'AutoScaleX' for element 'plottingPanel222'
-      .setProperty("XFixedTick",0) // EJsS HtmlView.HtmlView Page: setting property 'XFixedTick' for element 'plottingPanel222'
-      .setProperty("Title","Acceleration") // EJsS HtmlView.HtmlView Page: setting property 'Title' for element 'plottingPanel222'
-      .setProperty("MaximumY",1) // EJsS HtmlView.HtmlView Page: setting property 'MaximumY' for element 'plottingPanel222'
+      .setProperty("XAutoTicks",false) // EJsS HtmlView.HtmlView Page: setting property 'XAutoTicks' for element 'plottingPanel222'
+      .setProperty("GridXLineColor","rgba(200,220,208,1)") // EJsS HtmlView.HtmlView Page: setting property 'GridXLineColor' for element 'plottingPanel222'
+      .setProperty("GridXShow",true) // EJsS HtmlView.HtmlView Page: setting property 'GridXShow' for element 'plottingPanel222'
       ;
 
     _view._9(EJSS_DRAWING2D.trace,"dragf332", _view.plottingPanel222) // EJsS HtmlView.HtmlView Page: declaration of element 'dragf332'
@@ -802,6 +826,7 @@ function kinematic_View_0 (_topFrame) {
       ;
 
     _view._9(EJSS_INTERFACE.html,"summaryText", _view.summaryPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'summaryText'
+      .setProperty("Height","500px") // EJsS HtmlView.HtmlView Page: setting property 'Height' for element 'summaryText'
       .setProperty("Html","<h4>Constant velocity and zero acceleration</h4> <p><u>Positive velocity</u></p> <p>Adjust the initial velocity to a positive value and set the  acceleration setting to zero. Before playing the simulation, sketch  the displacement-time, velocity-time and acceleraton-time graphs, taking positive sign as the rightward direction and the car  to be initially at zero displacement.</p> <ol> <li>Play the simulation and compare the displacement,  velocity and acceleration graphs produced by the simulation with those you have sketched. </li> <li>Note that the gradient of the displacement time graph at each time  corresponds with the value on the velocity-time graph. </li> <li> Note that the gradient of the velocity time graph at each time  corresponds with the value on the acceleration-time graph. </li> <li> Note that the area under the velocity-time graph is equal to the corresponding value on  the displacement-time graph. </li> <li> Note that the area under the acceleration-time graph is equal to the  corresponding value on the velocity-time graph. </li> <li> A common way of analyzing the motion of objects in physics labs is to perform a ticker tape analysis. This is represented as blue dots which are placed at 1 sec intervals.  Observe how the separation between the dots changes, if any. </li> </ol> <p><u>Negative velocity</u></p> <p>Repeat the process as above but with a negative velocity value setting.</p> <h4>Constant Acceleration </h4> <p><u>Positive acceleration </u></p> <p>Adjust the velocity setting to zero and the acceleration to a  positive value. Attempt to sketch the displacement, velocity and  acceleration graphs. Repeat the comparison as above. </p> <p><u>Negative acceleration</u></p> <p>Repeat as above. </p>") // EJsS HtmlView.HtmlView Page: setting property 'Html' for element 'summaryText'
       ;
 

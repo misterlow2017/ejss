@@ -89,12 +89,18 @@ var _stringProperties = {};
   var dt; // EjsS Model.Variables.Motion Vars.dt
   var tol; // EjsS Model.Variables.Motion Vars.tol
   var cutTime; // EjsS Model.Variables.Motion Vars.cutTime
+  var maxhgt; // EjsS Model.Variables.Motion Vars.maxhgt
+  var maxtime; // EjsS Model.Variables.Motion Vars.maxtime
+  var velground; // EjsS Model.Variables.Motion Vars.velground
+  var timeground; // EjsS Model.Variables.Motion Vars.timeground
 
   var ropeVis; // EjsS Model.Variables.Draw Vars.ropeVis
   var msg; // EjsS Model.Variables.Draw Vars.msg
   var groundHeight; // EjsS Model.Variables.Draw Vars.groundHeight
   var cargo_sizeX; // EjsS Model.Variables.Draw Vars.cargo_sizeX
   var cargo_sizeY; // EjsS Model.Variables.Draw Vars.cargo_sizeY
+  var stats1; // EjsS Model.Variables.Draw Vars.stats1
+  var stats2; // EjsS Model.Variables.Draw Vars.stats2
 
   var _privateOdesList;
   var _ODEi_evolution1;
@@ -121,11 +127,17 @@ var _stringProperties = {};
       dt : dt,
       tol : tol,
       cutTime : cutTime,
+      maxhgt : maxhgt,
+      maxtime : maxtime,
+      velground : velground,
+      timeground : timeground,
       ropeVis : ropeVis,
       msg : msg,
       groundHeight : groundHeight,
       cargo_sizeX : cargo_sizeX,
-      cargo_sizeY : cargo_sizeY
+      cargo_sizeY : cargo_sizeY,
+      stats1 : stats1,
+      stats2 : stats2
     };
   };
 
@@ -142,11 +154,17 @@ var _stringProperties = {};
       dt : dt,
       tol : tol,
       cutTime : cutTime,
+      maxhgt : maxhgt,
+      maxtime : maxtime,
+      velground : velground,
+      timeground : timeground,
       ropeVis : ropeVis,
       msg : msg,
       groundHeight : groundHeight,
       cargo_sizeX : cargo_sizeX,
-      cargo_sizeY : cargo_sizeY
+      cargo_sizeY : cargo_sizeY,
+      stats1 : stats1,
+      stats2 : stats2
     };
   };
 
@@ -160,11 +178,17 @@ var _stringProperties = {};
     if(typeof json.dt != "undefined") dt = json.dt;
     if(typeof json.tol != "undefined") tol = json.tol;
     if(typeof json.cutTime != "undefined") cutTime = json.cutTime;
+    if(typeof json.maxhgt != "undefined") maxhgt = json.maxhgt;
+    if(typeof json.maxtime != "undefined") maxtime = json.maxtime;
+    if(typeof json.velground != "undefined") velground = json.velground;
+    if(typeof json.timeground != "undefined") timeground = json.timeground;
     if(typeof json.ropeVis != "undefined") ropeVis = json.ropeVis;
     if(typeof json.msg != "undefined") msg = json.msg;
     if(typeof json.groundHeight != "undefined") groundHeight = json.groundHeight;
     if(typeof json.cargo_sizeX != "undefined") cargo_sizeX = json.cargo_sizeX;
     if(typeof json.cargo_sizeY != "undefined") cargo_sizeY = json.cargo_sizeY;
+    if(typeof json.stats1 != "undefined") stats1 = json.stats1;
+    if(typeof json.stats2 != "undefined") stats2 = json.stats2;
   };
 
   _model._readParametersPublic = function(json) {
@@ -177,11 +201,17 @@ var _stringProperties = {};
     if(typeof json.dt != "undefined") dt = json.dt;
     if(typeof json.tol != "undefined") tol = json.tol;
     if(typeof json.cutTime != "undefined") cutTime = json.cutTime;
+    if(typeof json.maxhgt != "undefined") maxhgt = json.maxhgt;
+    if(typeof json.maxtime != "undefined") maxtime = json.maxtime;
+    if(typeof json.velground != "undefined") velground = json.velground;
+    if(typeof json.timeground != "undefined") timeground = json.timeground;
     if(typeof json.ropeVis != "undefined") ropeVis = json.ropeVis;
     if(typeof json.msg != "undefined") msg = json.msg;
     if(typeof json.groundHeight != "undefined") groundHeight = json.groundHeight;
     if(typeof json.cargo_sizeX != "undefined") cargo_sizeX = json.cargo_sizeX;
     if(typeof json.cargo_sizeY != "undefined") cargo_sizeY = json.cargo_sizeY;
+    if(typeof json.stats1 != "undefined") stats1 = json.stats1;
+    if(typeof json.stats2 != "undefined") stats2 = json.stats2;
   };
 
   function _unserializePublic(json) { return _model.unserializePublic(json); }
@@ -205,6 +235,7 @@ var _stringProperties = {};
     __pagesEnabled["ODE Page"] = true;
     __pagesEnabled["Cut Rope"] = true;
     __pagesEnabled["Ground Collision"] = true;
+    __pagesEnabled["Event"] = true;
   });
 
   _model.addToReset(function() {
@@ -217,6 +248,10 @@ var _stringProperties = {};
     dt = 0.02; // EjsS Model.Variables.Motion Vars.dt
     tol = 0.001; // EjsS Model.Variables.Motion Vars.tol
     cutTime = 3.5; // EjsS Model.Variables.Motion Vars.cutTime
+    maxhgt = 0; // EjsS Model.Variables.Motion Vars.maxhgt
+    maxtime = 0; // EjsS Model.Variables.Motion Vars.maxtime
+    velground = 0; // EjsS Model.Variables.Motion Vars.velground
+    timeground = 0; // EjsS Model.Variables.Motion Vars.timeground
   });
 
   _model.addToReset(function() {
@@ -225,6 +260,8 @@ var _stringProperties = {};
     groundHeight = 1.00; // EjsS Model.Variables.Draw Vars.groundHeight
     cargo_sizeX = 3.0; // EjsS Model.Variables.Draw Vars.cargo_sizeX
     cargo_sizeY = 1.5; // EjsS Model.Variables.Draw Vars.cargo_sizeY
+    stats1 = ""; // EjsS Model.Variables.Draw Vars.stats1
+    stats2 = ""; // EjsS Model.Variables.Draw Vars.stats2
   });
 
   if (_inputParameters) {
@@ -314,6 +351,7 @@ var _stringProperties = {};
     var __state=[];
     var _ODE_evolution1_Event1;
     var _ODE_evolution1_Event2;
+    var _ODE_evolution1_Event3;
     var __ignoreErrors=false;
     var __mustInitialize=true;
     var __isEnabled=true;
@@ -352,6 +390,7 @@ var _stringProperties = {};
       __eventSolver.removeAllEvents();
       if (__pagesEnabled["Cut Rope"]) __eventSolver.addEvent(_ODE_evolution1_Event1());
       if (__pagesEnabled["Ground Collision"]) __eventSolver.addEvent(_ODE_evolution1_Event2());
+      if (__pagesEnabled["Event"]) __eventSolver.addEvent(_ODE_evolution1_Event3());
       for(k in userEvents1){__eventSolver.addEvent(userEvents1[k]);}
       __eventSolver.setEstimateFirstStep(false);
       __eventSolver.setEnableExceptions(false);
@@ -618,6 +657,62 @@ var _stringProperties = {};
       function __userDefinedAction() {
         _pause();  // > Event action for page ODE Page:1
         msg = "Splat! End of simulation.";  // > Event action for page ODE Page:2
+        timeground=t;  // > Event action for page ODE Page:3
+        velground=v_cargo;  // > Event action for page ODE Page:4
+        stats2="Velocity of impact "+velground.toFixed(1)+" m/s (time = "+timeground.toFixed(2)+" s)";  // > Event action for page ODE Page:5
+        return true;
+      }
+
+      return _eventSelf;
+    }; // End of event
+
+    _ODE_evolution1_Event3 = function() {
+      var _eventSelf = {};
+
+      _eventSelf.getTypeOfEvent = function() { return EJSS_ODE_SOLVERS.EVENT_TYPE.CROSSING_EVENT; };
+
+      _eventSelf.getRootFindingMethod = function() { return EJSS_ODE_SOLVERS.EVENT_METHOD.BISECTION; };
+
+      _eventSelf.getMaxIterations = function() { return 100; };
+
+      _eventSelf.getTolerance = function() { return 1.0e-5; };
+
+      _eventSelf.evaluate = function(_aState) { 
+      // Extract our variables from _aState
+        var __i=0;
+        var __cOut=0;
+        var y_balloon = _aState[__cOut++];
+        var y_cargo = _aState[__cOut++];
+        var v_cargo = _aState[__cOut++];
+        var t = _aState[__cOut++];
+        return v_cargo;  // > Event zero-condition for page ODE Page:1
+      };
+
+      _eventSelf.action = function() { 
+      // Extract our variables from __state
+        var __i=0;
+        var __cOut=0;
+        y_balloon = __state[__cOut++];
+        y_cargo = __state[__cOut++];
+        v_cargo = __state[__cOut++];
+        t = __state[__cOut++];
+        var _returnValue = __userDefinedAction();
+      // Copy our variables to __state[] 
+        var __j=0;
+        var __n=0;
+        var __cIn=0;
+        __state[__cIn++] = y_balloon;
+        __state[__cIn++] = y_cargo;
+        __state[__cIn++] = v_cargo;
+        __state[__cIn++] = t;
+        return _returnValue;
+      };
+
+      function __userDefinedAction() {
+        maxhgt=y_cargo;  // > Event action for page ODE Page:1
+        maxtime=t;  // > Event action for page ODE Page:2
+          // > Event action for page ODE Page:3
+        stats1="Maximum Height of cargo : "+maxhgt.toFixed(1)+" m (time = "+maxtime.toFixed(2)+" s)"  // > Event action for page ODE Page:4
         return true;
       }
 
@@ -676,10 +771,14 @@ var _stringProperties = {};
           _view.cargo.linkProperty("SizeX",  function() { return cargo_sizeX; }, function(_v) { cargo_sizeX = _v; } ); // HtmlView Page linking property 'SizeX' for element 'cargo'
           _view.cargo.linkProperty("Y",  function() { return y_cargo; }, function(_v) { y_cargo = _v; } ); // HtmlView Page linking property 'Y' for element 'cargo'
           _view.cargo.linkProperty("SizeY",  function() { return cargo_sizeY; }, function(_v) { cargo_sizeY = _v; } ); // HtmlView Page linking property 'SizeY' for element 'cargo'
+          _view.plottingPanel.linkProperty("XTickStep",  function() { return Math.abs(Math.ceil(t/5))+1; } ); // HtmlView Page linking property 'XTickStep' for element 'plottingPanel'
+          _view.plottingPanel.linkProperty("YTickStep",  function() { return Math.abs(Math.ceil(y_balloon/5))+1; } ); // HtmlView Page linking property 'YTickStep' for element 'plottingPanel'
           _view.dragf3.linkProperty("InputX",  function() { return t; }, function(_v) { t = _v; } ); // HtmlView Page linking property 'InputX' for element 'dragf3'
           _view.dragf3.linkProperty("InputY",  function() { return y_balloon; }, function(_v) { y_balloon = _v; } ); // HtmlView Page linking property 'InputY' for element 'dragf3'
           _view.dragf32.linkProperty("InputX",  function() { return t; }, function(_v) { t = _v; } ); // HtmlView Page linking property 'InputX' for element 'dragf32'
           _view.dragf32.linkProperty("InputY",  function() { return y_cargo; }, function(_v) { y_cargo = _v; } ); // HtmlView Page linking property 'InputY' for element 'dragf32'
+          _view.plottingPanel2.linkProperty("XTickStep",  function() { return Math.ceil(t/5)+1; } ); // HtmlView Page linking property 'XTickStep' for element 'plottingPanel2'
+          _view.plottingPanel2.linkProperty("YTickStep",  function() { return Math.abs(Math.ceil(v_cargo/5))+1; } ); // HtmlView Page linking property 'YTickStep' for element 'plottingPanel2'
           _view.dragf33.linkProperty("InputX",  function() { return t; }, function(_v) { t = _v; } ); // HtmlView Page linking property 'InputX' for element 'dragf33'
           _view.dragf33.linkProperty("InputY",  function() { return v_balloon; }, function(_v) { v_balloon = _v; } ); // HtmlView Page linking property 'InputY' for element 'dragf33'
           _view.dragf332.linkProperty("InputX",  function() { return t; }, function(_v) { t = _v; } ); // HtmlView Page linking property 'InputX' for element 'dragf332'
@@ -693,12 +792,14 @@ var _stringProperties = {};
           _view.step.setAction("OnClick", _step); // HtmlView Page setting action 'OnClick' for element 'step'
           _view.resetButton.setAction("OnClick", function(_data,_info) {
   _pause();
-  _initialize();
+  _reset();
 
 }); // HtmlView Page setting action 'OnClick' for element 'resetButton'
-          _view.vLabel.linkProperty("Text",  function() { return "Velocity of Cargo = "+v_cargo.toFixed(2)+" m/s"; } ); // HtmlView Page linking property 'Text' for element 'vLabel'
-          _view.yLabel.linkProperty("Text",  function() { return "Height of Cargo from ground = "+y_cargo.toFixed(2)+" m"; } ); // HtmlView Page linking property 'Text' for element 'yLabel'
+          _view.vLabel.linkProperty("Text",  function() { return "Velocity of Balloon = "+v_balloon.toFixed(2)+" m/s"; } ); // HtmlView Page linking property 'Text' for element 'vLabel'
+          _view.yLabel.linkProperty("Text",  function() { return "Height of Cargo  = "+cargo_sizeY.toFixed(2)+" m"; } ); // HtmlView Page linking property 'Text' for element 'yLabel'
           _view.cuttime.linkProperty("Text",  function() { return "Time when rope is cut  = "+cutTime+" s"; } ); // HtmlView Page linking property 'Text' for element 'cuttime'
+          _view.stats.linkProperty("Text",  function() { return stats1+""; } ); // HtmlView Page linking property 'Text' for element 'stats'
+          _view.stats2.linkProperty("Text",  function() { return stats2+""; } ); // HtmlView Page linking property 'Text' for element 'stats2'
           break;
       } // end of switch
     }; // end of new reset
@@ -806,11 +907,15 @@ function hotairballoon_View_0 (_topFrame) {
 
     _view._9(EJSS_DRAWING2D.plottingPanel,"plottingPanel", _view.rightpanel) // EJsS HtmlView.HtmlView Page: declaration of element 'plottingPanel'
       .setProperty("Height","200px") // EJsS HtmlView.HtmlView Page: setting property 'Height' for element 'plottingPanel'
+      .setProperty("YFixedTick",0) // EJsS HtmlView.HtmlView Page: setting property 'YFixedTick' for element 'plottingPanel'
+      .setProperty("YAutoTicks",false) // EJsS HtmlView.HtmlView Page: setting property 'YAutoTicks' for element 'plottingPanel'
       .setProperty("TitleY","Displacement /m") // EJsS HtmlView.HtmlView Page: setting property 'TitleY' for element 'plottingPanel'
       .setProperty("AutoScaleY",true) // EJsS HtmlView.HtmlView Page: setting property 'AutoScaleY' for element 'plottingPanel'
       .setProperty("TitleX","Time /s") // EJsS HtmlView.HtmlView Page: setting property 'TitleX' for element 'plottingPanel'
       .setProperty("AutoScaleX",true) // EJsS HtmlView.HtmlView Page: setting property 'AutoScaleX' for element 'plottingPanel'
+      .setProperty("XFixedTick",0) // EJsS HtmlView.HtmlView Page: setting property 'XFixedTick' for element 'plottingPanel'
       .setProperty("Title","Displacement") // EJsS HtmlView.HtmlView Page: setting property 'Title' for element 'plottingPanel'
+      .setProperty("XAutoTicks",false) // EJsS HtmlView.HtmlView Page: setting property 'XAutoTicks' for element 'plottingPanel'
       ;
 
     _view._9(EJSS_DRAWING2D.trace,"dragf3", _view.plottingPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'dragf3'
@@ -825,11 +930,15 @@ function hotairballoon_View_0 (_topFrame) {
 
     _view._9(EJSS_DRAWING2D.plottingPanel,"plottingPanel2", _view.rightpanel) // EJsS HtmlView.HtmlView Page: declaration of element 'plottingPanel2'
       .setProperty("Height","200px") // EJsS HtmlView.HtmlView Page: setting property 'Height' for element 'plottingPanel2'
+      .setProperty("YFixedTick",0) // EJsS HtmlView.HtmlView Page: setting property 'YFixedTick' for element 'plottingPanel2'
+      .setProperty("YAutoTicks",false) // EJsS HtmlView.HtmlView Page: setting property 'YAutoTicks' for element 'plottingPanel2'
       .setProperty("TitleY","Speed m/s") // EJsS HtmlView.HtmlView Page: setting property 'TitleY' for element 'plottingPanel2'
       .setProperty("AutoScaleY",true) // EJsS HtmlView.HtmlView Page: setting property 'AutoScaleY' for element 'plottingPanel2'
       .setProperty("TitleX","Time /s") // EJsS HtmlView.HtmlView Page: setting property 'TitleX' for element 'plottingPanel2'
       .setProperty("AutoScaleX",true) // EJsS HtmlView.HtmlView Page: setting property 'AutoScaleX' for element 'plottingPanel2'
+      .setProperty("XFixedTick",0) // EJsS HtmlView.HtmlView Page: setting property 'XFixedTick' for element 'plottingPanel2'
       .setProperty("Title","Velocity") // EJsS HtmlView.HtmlView Page: setting property 'Title' for element 'plottingPanel2'
+      .setProperty("XAutoTicks",false) // EJsS HtmlView.HtmlView Page: setting property 'XAutoTicks' for element 'plottingPanel2'
       ;
 
     _view._9(EJSS_DRAWING2D.trace,"dragf33", _view.plottingPanel2) // EJsS HtmlView.HtmlView Page: declaration of element 'dragf33'
@@ -879,10 +988,23 @@ function hotairballoon_View_0 (_topFrame) {
       .setProperty("CSS",{"font-weight":"700"}) // EJsS HtmlView.HtmlView Page: setting property 'CSS' for element 'cuttime'
       ;
 
+    _view._9(EJSS_INTERFACE.imageAndTextButton,"stats", _view.dataPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'stats'
+      .setProperty("Width","500px") // EJsS HtmlView.HtmlView Page: setting property 'Width' for element 'stats'
+      .setProperty("CSS",{"font-weight":"700"}) // EJsS HtmlView.HtmlView Page: setting property 'CSS' for element 'stats'
+      .setProperty("Foreground","Red") // EJsS HtmlView.HtmlView Page: setting property 'Foreground' for element 'stats'
+      ;
+
+    _view._9(EJSS_INTERFACE.imageAndTextButton,"stats2", _view.dataPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'stats2'
+      .setProperty("Width","500px") // EJsS HtmlView.HtmlView Page: setting property 'Width' for element 'stats2'
+      .setProperty("CSS",{"font-weight":"700"}) // EJsS HtmlView.HtmlView Page: setting property 'CSS' for element 'stats2'
+      .setProperty("Foreground","Red") // EJsS HtmlView.HtmlView Page: setting property 'Foreground' for element 'stats2'
+      ;
+
     _view._9(EJSS_INTERFACE.panel,"problemPanel", _view._topFrame) // EJsS HtmlView.HtmlView Page: declaration of element 'problemPanel'
       ;
 
     _view._9(EJSS_INTERFACE.html,"problem", _view.problemPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'problem'
+      .setProperty("Height","500px") // EJsS HtmlView.HtmlView Page: setting property 'Height' for element 'problem'
       .setProperty("Html","<p> The dimension of the cargo is 3m (length) x 3m (breadth) x 1.5 m (height).  The hot air balloon and cargo is initially rising at a constant velocity of 5 m s<sup>-1</sup></p> <p>At a certain time, the rope holding cargo on a hot-air balloon is cut and the cargo is in free fall <b>(position is given in meters and time is given in seconds</b>. The table gives you the coordinates of the cargo.</p> <ol> <li>What is the velocity of the cargo before the rope is cut?</li> <li>At what instant does the cargo reach its maximum height? Calculate t and compare it to what you measure in the animation.</li> <li>What is the maximum height (relative to the ground) reached by the cargo? Calculate this height and compare it to what you measure in the animation.</li> <li>Calculate the instantaneous velocity of the cargo at the instant (just before) it hits the ground.</li> </ol>") // EJsS HtmlView.HtmlView Page: setting property 'Html' for element 'problem'
       ;
 

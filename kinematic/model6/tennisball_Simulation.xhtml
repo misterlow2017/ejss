@@ -237,7 +237,7 @@ var _stringProperties = {};
     ball_size = 0.1; // EjsS Model.Variables.Motion Vars.ball_size
     yr = 0.1; // EjsS Model.Variables.Motion Vars.yr
     showR = false; // EjsS Model.Variables.Motion Vars.showR
-    b = 0.05; // EjsS Model.Variables.Motion Vars.b
+    b = 0.4; // EjsS Model.Variables.Motion Vars.b
     vi = 8; // EjsS Model.Variables.Motion Vars.vi
     vbird = 2.5; // EjsS Model.Variables.Motion Vars.vbird
     ybird = 5.0; // EjsS Model.Variables.Motion Vars.ybird
@@ -478,6 +478,8 @@ var _stringProperties = {};
     __odeSelf.getState = function() { return __state; };
 
     __odeSelf.getRate = function(_aState,_aRate) {
+      _aRate[_aRate.length-1] = 0.0; // In case the prelim code returns
+      var __index=-1; // so that it can be used in preliminary code
       // Extract our variables from _aState
         var __i=0;
         var __cOut=0;
@@ -486,12 +488,18 @@ var _stringProperties = {};
         var yr = _aState[__cOut++];
         var vr = _aState[__cOut++];
         var t = _aState[__cOut++];
+      // Preliminary code: Code to be executed before rate equations are evaluated
+        //if (vr>0)  // > Preliminary code for ODE.ODE Page:1
+        //ar=-9.81-b*vr*vr;  // > Preliminary code for ODE.ODE Page:2
+        //else  // > Preliminary code for ODE.ODE Page:3
+        //ar=-9.81+b*vr*vr;  // > Preliminary code for ODE.ODE Page:4
+        ar=-9.81-b*vr;  // > Preliminary code for ODE.ODE Page:5
       // Compute the rate
         var __cRate=0;
         _aRate[__cRate++] = v; // Rate for ODE: ODE Page:y
         _aRate[__cRate++] = a; // Rate for ODE: ODE Page:v
         _aRate[__cRate++] = vr; // Rate for ODE: ODE Page:yr
-        _aRate[__cRate++] = a-b*vr*vr; // Rate for ODE: ODE Page:vr
+        _aRate[__cRate++] = ar; // Rate for ODE: ODE Page:vr
         _aRate[__cRate++] = 1; // independent variable
         return _aRate;
     }; //end of getRate
@@ -750,12 +758,16 @@ var _stringProperties = {};
           _view.ball2.linkProperty("SizeY",  function() { return ball_size*2; } ); // HtmlView Page linking property 'SizeY' for element 'ball2'
           _view.launcher2.linkProperty("Visibility",  function() { return showR; }, function(_v) { showR = _v; } ); // HtmlView Page linking property 'Visibility' for element 'launcher2'
           _view.plottingPanel2.linkProperty("MaximumX",  function() { return t+0.5; } ); // HtmlView Page linking property 'MaximumX' for element 'plottingPanel2'
+          _view.plottingPanel2.linkProperty("XTickStep",  function() { return Math.max(1,Math.ceil(t/5)); } ); // HtmlView Page linking property 'XTickStep' for element 'plottingPanel2'
+          _view.plottingPanel2.linkProperty("YTickStep",  function() { return Math.abs(Math.ceil(y/5))+1; } ); // HtmlView Page linking property 'YTickStep' for element 'plottingPanel2'
           _view.dragf3.linkProperty("InputX",  function() { return t; }, function(_v) { t = _v; } ); // HtmlView Page linking property 'InputX' for element 'dragf3'
           _view.dragf3.linkProperty("InputY",  function() { return y; }, function(_v) { y = _v; } ); // HtmlView Page linking property 'InputY' for element 'dragf3'
           _view.dragf32.linkProperty("InputX",  function() { return t; }, function(_v) { t = _v; } ); // HtmlView Page linking property 'InputX' for element 'dragf32'
           _view.dragf32.linkProperty("Visibility",  function() { return showR; }, function(_v) { showR = _v; } ); // HtmlView Page linking property 'Visibility' for element 'dragf32'
           _view.dragf32.linkProperty("InputY",  function() { return yr; }, function(_v) { yr = _v; } ); // HtmlView Page linking property 'InputY' for element 'dragf32'
           _view.plottingPanel22.linkProperty("MaximumX",  function() { return t+0.5; } ); // HtmlView Page linking property 'MaximumX' for element 'plottingPanel22'
+          _view.plottingPanel22.linkProperty("XTickStep",  function() { return Math.max(1,Math.ceil(t/5)); } ); // HtmlView Page linking property 'XTickStep' for element 'plottingPanel22'
+          _view.plottingPanel22.linkProperty("YTickStep",  function() { return Math.max(1,Math.abs(Math.ceil(v/2))); } ); // HtmlView Page linking property 'YTickStep' for element 'plottingPanel22'
           _view.dragf33.linkProperty("InputX",  function() { return t; }, function(_v) { t = _v; } ); // HtmlView Page linking property 'InputX' for element 'dragf33'
           _view.dragf33.linkProperty("InputY",  function() { return v; }, function(_v) { v = _v; } ); // HtmlView Page linking property 'InputY' for element 'dragf33'
           _view.dragf332.linkProperty("InputX",  function() { return t; }, function(_v) { t = _v; } ); // HtmlView Page linking property 'InputX' for element 'dragf332'
@@ -954,15 +966,20 @@ function tennisball_View_0 (_topFrame) {
 
     _view._9(EJSS_DRAWING2D.plottingPanel,"plottingPanel2", _view.rightpanel) // EJsS HtmlView.HtmlView Page: declaration of element 'plottingPanel2'
       .setProperty("Height","200px") // EJsS HtmlView.HtmlView Page: setting property 'Height' for element 'plottingPanel2'
+      .setProperty("XFixedTick",0) // EJsS HtmlView.HtmlView Page: setting property 'XFixedTick' for element 'plottingPanel2'
+      .setProperty("Title","Displacement") // EJsS HtmlView.HtmlView Page: setting property 'Title' for element 'plottingPanel2'
       .setProperty("YFixedTick",0) // EJsS HtmlView.HtmlView Page: setting property 'YFixedTick' for element 'plottingPanel2'
       .setProperty("YAutoTicks",false) // EJsS HtmlView.HtmlView Page: setting property 'YAutoTicks' for element 'plottingPanel2'
+      .setProperty("GridYShow",true) // EJsS HtmlView.HtmlView Page: setting property 'GridYShow' for element 'plottingPanel2'
       .setProperty("MinimumX",0) // EJsS HtmlView.HtmlView Page: setting property 'MinimumX' for element 'plottingPanel2'
+      .setProperty("GridYLineColor","LightGray") // EJsS HtmlView.HtmlView Page: setting property 'GridYLineColor' for element 'plottingPanel2'
       .setProperty("TitleY","Displacement /m") // EJsS HtmlView.HtmlView Page: setting property 'TitleY' for element 'plottingPanel2'
-      .setProperty("YTickStep",1.0) // EJsS HtmlView.HtmlView Page: setting property 'YTickStep' for element 'plottingPanel2'
       .setProperty("AutoScaleY",true) // EJsS HtmlView.HtmlView Page: setting property 'AutoScaleY' for element 'plottingPanel2'
       .setProperty("TitleX","Time /s") // EJsS HtmlView.HtmlView Page: setting property 'TitleX' for element 'plottingPanel2'
       .setProperty("AutoScaleX",false) // EJsS HtmlView.HtmlView Page: setting property 'AutoScaleX' for element 'plottingPanel2'
-      .setProperty("Title","Displacement") // EJsS HtmlView.HtmlView Page: setting property 'Title' for element 'plottingPanel2'
+      .setProperty("XAutoTicks",false) // EJsS HtmlView.HtmlView Page: setting property 'XAutoTicks' for element 'plottingPanel2'
+      .setProperty("GridXLineColor","LightGray") // EJsS HtmlView.HtmlView Page: setting property 'GridXLineColor' for element 'plottingPanel2'
+      .setProperty("GridXShow",true) // EJsS HtmlView.HtmlView Page: setting property 'GridXShow' for element 'plottingPanel2'
       ;
 
     _view._9(EJSS_DRAWING2D.trace,"dragf3", _view.plottingPanel2) // EJsS HtmlView.HtmlView Page: declaration of element 'dragf3'
@@ -977,15 +994,16 @@ function tennisball_View_0 (_topFrame) {
 
     _view._9(EJSS_DRAWING2D.plottingPanel,"plottingPanel22", _view.rightpanel) // EJsS HtmlView.HtmlView Page: declaration of element 'plottingPanel22'
       .setProperty("Height","200px") // EJsS HtmlView.HtmlView Page: setting property 'Height' for element 'plottingPanel22'
+      .setProperty("XFixedTick",0) // EJsS HtmlView.HtmlView Page: setting property 'XFixedTick' for element 'plottingPanel22'
+      .setProperty("Title","Velocity") // EJsS HtmlView.HtmlView Page: setting property 'Title' for element 'plottingPanel22'
       .setProperty("YFixedTick",0) // EJsS HtmlView.HtmlView Page: setting property 'YFixedTick' for element 'plottingPanel22'
       .setProperty("YAutoTicks",false) // EJsS HtmlView.HtmlView Page: setting property 'YAutoTicks' for element 'plottingPanel22'
       .setProperty("MinimumX",0) // EJsS HtmlView.HtmlView Page: setting property 'MinimumX' for element 'plottingPanel22'
       .setProperty("TitleY","Speed m/s") // EJsS HtmlView.HtmlView Page: setting property 'TitleY' for element 'plottingPanel22'
-      .setProperty("YTickStep",2) // EJsS HtmlView.HtmlView Page: setting property 'YTickStep' for element 'plottingPanel22'
       .setProperty("AutoScaleY",true) // EJsS HtmlView.HtmlView Page: setting property 'AutoScaleY' for element 'plottingPanel22'
       .setProperty("TitleX","Time /s") // EJsS HtmlView.HtmlView Page: setting property 'TitleX' for element 'plottingPanel22'
       .setProperty("AutoScaleX",false) // EJsS HtmlView.HtmlView Page: setting property 'AutoScaleX' for element 'plottingPanel22'
-      .setProperty("Title","Velocity") // EJsS HtmlView.HtmlView Page: setting property 'Title' for element 'plottingPanel22'
+      .setProperty("XAutoTicks",false) // EJsS HtmlView.HtmlView Page: setting property 'XAutoTicks' for element 'plottingPanel22'
       ;
 
     _view._9(EJSS_DRAWING2D.trace,"dragf33", _view.plottingPanel22) // EJsS HtmlView.HtmlView Page: declaration of element 'dragf33'
@@ -1054,6 +1072,7 @@ function tennisball_View_0 (_topFrame) {
       ;
 
     _view._9(EJSS_INTERFACE.html,"problem", _view.problemPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'problem'
+      .setProperty("Height","500px") // EJsS HtmlView.HtmlView Page: setting property 'Height' for element 'problem'
       .setProperty("Html","<p>A giant tennis ball launcher shoots a giant tennis ball straight up into the air (position is given in meters and time is given in seconds). The diameter of the ball is 0.1 m. </p> <p> For each initial speed setting, use the kinematics equation to:</p> <ol> <li>Compute the maximum height of the ball. </li> <li>Compute the time taken to reach the maximum height. </li> <li>What is the speed of the ball at the maximum height? </li> <li>What is the total time that the ball is above the ground? </li> <li>What is the velocity of the ball when it strikes the ground? </li> </ol> <h4>Effect of Air Resistance</h4> <p>Check the air resistance checkbox.   Compare the graphs of the two tennis balls.   Attempt to account for the differences in the </p> <ol> <li>shape </li> <li>maximum heights </li> <li>time of maximum height </li> <li>time of flight </li> </ol> <h4>Game 1</h4> <p>  A bird is resting on a branch on a tree directly above the tennis ball launcher. Based on the height given, determine the minimum initial velocity of the tennis ball to just hit the bird. </p> <h4>Game 2</h4> <p>  A bird is flying horizontally at constant speed above the tennis ball launcher. Based on the given speed and height, determine the initial velocity of the tennis ball to hit the bird directly above the ball launcher. </p>") // EJsS HtmlView.HtmlView Page: setting property 'Html' for element 'problem'
       ;
 

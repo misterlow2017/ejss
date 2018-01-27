@@ -1,0 +1,17 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 171013. Visit http://www.um.es/fem/Ejs
+title: Simple Projectile Motion
+logo-image: 
+author: Anonymous
+copyright: 
+preferred-width: 800
+preferred-height: 600
+author-image: 
+source: projectileAR.ejss
+main-script: 
+main-simulation: projectileAR_Simulation.xhtml
+available-languages: 
+html-contents: projectileAR_Contents.xhtml
+html-main: projectileAR.xhtml
+page-title: Simple Projectile Motion
+page-index: projectileAR_Simulation.xhtml
+resource: images/basketball.png

@@ -10,6 +10,7 @@ source: kinematic.ejss
 main-script: 
 main-simulation: kinematic_Simulation.xhtml
 available-languages: 
+html-description: kinematic_Intro_3.html
 html-description: kinematic_Intro_2.html
 html-description: kinematic_Intro_1.html
 html-contents: kinematic_Contents.xhtml
@@ -18,6 +19,8 @@ page-title: Introduction
 page-index: kinematic_Intro_1.html
 page-title: Quiz
 page-index: kinematic_Intro_2.html
+page-title: Feedback / Comments
+page-index: kinematic_Intro_3.html
 page-title: Simulation
 page-index: kinematic_Simulation.xhtml
 resource: images/distance-time-graph1.gif

@@ -1,0 +1,16 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 171013. Visit http://www.um.es/fem/Ejs
+title: Free Fall 3D
+logo-image: 
+author: Anonymous
+copyright: 
+preferred-width: 800
+preferred-height: 600
+author-image: 
+source: FreeFall3D.ejss
+main-script: 
+main-simulation: FreeFall3D_Simulation.xhtml
+available-languages: 
+html-contents: FreeFall3D_Contents.xhtml
+html-main: FreeFall3D.xhtml
+page-title: Free Fall 3D
+page-index: FreeFall3D_Simulation.xhtml

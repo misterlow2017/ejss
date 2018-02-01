@@ -1,0 +1,21 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 171013. Visit http://www.um.es/fem/Ejs
+title: Block On An Incline Plane
+logo-image: 
+author: Anonymous
+copyright: 
+preferred-width: 800
+preferred-height: 600
+author-image: 
+source: SlidingDownIncline.ejss
+main-script: 
+main-simulation: SlidingDownIncline_Simulation.xhtml
+available-languages: 
+html-contents: SlidingDownIncline_Contents.xhtml
+html-main: SlidingDownIncline.xhtml
+page-title: Block On An Incline Plane
+page-index: SlidingDownIncline_Simulation.xhtml
+resource: SlidingDownIncline/SlidingDownInclineIcon.png
+resource: SlidingDownIncline/SlidingDownIncline.xhtml
+resource: SlidingDownIncline/.DS_Store
+resource: SlidingDownIncline/SlidingDownIncline-FindCoefficient.xhtml
+resource: ejss.css

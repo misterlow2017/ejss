@@ -1,0 +1,16 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 171013. Visit http://www.um.es/fem/Ejs
+title: 
+logo-image: 
+author: Author name
+copyright: 
+preferred-width: 800
+preferred-height: 600
+author-image: 
+source: collision2_charges.ejss
+main-script: 
+main-simulation: collision2_charges_Simulation.xhtml
+available-languages: 
+html-contents: collision2_charges_Contents.xhtml
+html-main: collision2_charges.xhtml
+page-title: Simulation
+page-index: collision2_charges_Simulation.xhtml

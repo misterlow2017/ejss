@@ -1,0 +1,16 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 171013. Visit http://www.um.es/fem/Ejs
+title: Illustration 5.5: Air Friction
+logo-image: 
+author: Anonymous
+copyright: W. Christian
+preferred-width: 600
+preferred-height: 600
+author-image: 
+source: airresistance.ejss
+main-script: 
+main-simulation: airresistance_Simulation.xhtml
+available-languages: 
+html-contents: airresistance_Contents.xhtml
+html-main: airresistance.xhtml
+page-title: Air Friction
+page-index: airresistance_Simulation.xhtml

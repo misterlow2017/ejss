@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Module>
+<ModulePrefs
+title="atwood1"
+author="Anonymous"
+description="Adapted from Physlet Physics problem 4.11."
+screenshot=""
+thumbnail="">
+<Require feature="opensocial-0.9"/>
+<Require feature="dynamic-height"/>
+</ModulePrefs>
+<Content type="html" href="atwood1_Simulation.xhtml"/>
+</Module>

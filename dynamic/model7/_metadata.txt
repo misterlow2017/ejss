@@ -1,0 +1,16 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 171013. Visit http://www.um.es/fem/Ejs
+title: Take a Ride in an Elevator
+logo-image: 
+author: Anonymous
+copyright: 
+preferred-width: 600
+preferred-height: 600
+author-image: 
+source: lift.ejss
+main-script: 
+main-simulation: lift_Simulation.xhtml
+available-languages: 
+html-contents: lift_Contents.xhtml
+html-main: lift.xhtml
+page-title: Take a Ride in an Elevator
+page-index: lift_Simulation.xhtml

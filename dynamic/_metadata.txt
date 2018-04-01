@@ -1,0 +1,15 @@
+package:true
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 171013. Visit http://www.um.es/fem/Ejs
+title:Illustration 5.5: Air Friction
+logo-image:model1/
+author:Anonymous
+copyright:W. Christian
+author-image:
+model:model1 | Illustration 5.5: Air Friction
+model:model2 | Problem 4.11: Modified Atwood's Machine
+model:model3 | Problem 4.5: A Buoy Dropped into a Lake
+model:model4 | 
+model:model5 | 
+model:model6 | Static and Kinetic Friction
+model:model7 | Take a Ride in an Elevator
+model:model8 | Pull Your Wagons

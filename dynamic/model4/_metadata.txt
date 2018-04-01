@@ -1,0 +1,25 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 171013. Visit http://www.um.es/fem/Ejs
+title: 
+logo-image: 
+author: Author name
+copyright: 
+preferred-width: 800
+preferred-height: 600
+author-image: 
+source: collision2.ejss
+main-script: 
+main-simulation: collision2_Simulation.xhtml
+available-languages: 
+html-description: collision2_Intro_3.html
+html-description: collision2_Intro_2.html
+html-description: collision2_Intro_1.html
+html-contents: collision2_Contents.xhtml
+html-main: collision2.xhtml
+page-title: Introduction
+page-index: collision2_Intro_1.html
+page-title: Instructions
+page-index: collision2_Intro_2.html
+page-title: Quiz
+page-index: collision2_Intro_3.html
+page-title: Simulation
+page-index: collision2_Simulation.xhtml

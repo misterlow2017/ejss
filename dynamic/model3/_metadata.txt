@@ -1,0 +1,16 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 171013. Visit http://www.um.es/fem/Ejs
+title: Problem 4.5: A Buoy Dropped into a Lake
+logo-image: 
+author: Anonymous
+copyright: W. Christian
+preferred-width: 600
+preferred-height: 600
+author-image: 
+source: buoy.ejss
+main-script: 
+main-simulation: buoy_Simulation.xhtml
+available-languages: 
+html-contents: buoy_Contents.xhtml
+html-main: buoy.xhtml
+page-title: A Buoy Dropped into a Lake
+page-index: buoy_Simulation.xhtml

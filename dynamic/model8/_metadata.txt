@@ -1,0 +1,17 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 171013. Visit http://www.um.es/fem/Ejs
+title:  Pull Your Wagons
+logo-image: 
+author: Anonymous
+copyright: 
+preferred-width: 600
+preferred-height: 600
+author-image: 
+source: newton2law.ejss
+main-script: 
+main-simulation: newton2law_Simulation.xhtml
+available-languages: 
+html-contents: newton2law_Contents.xhtml
+html-main: newton2law.xhtml
+page-title: Pull Your Wagons
+page-index: newton2law_Simulation.xhtml
+resource: ill04_05/rpull.gif

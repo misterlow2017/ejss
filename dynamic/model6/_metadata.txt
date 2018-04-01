@@ -1,0 +1,17 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 171013. Visit http://www.um.es/fem/Ejs
+title: Static and Kinetic Friction
+logo-image: 
+author: Anonymous
+copyright: 
+preferred-width: 600
+preferred-height: 600
+author-image: 
+source: friction.ejss
+main-script: 
+main-simulation: friction_Simulation.xhtml
+available-languages: 
+html-contents: friction_Contents.xhtml
+html-main: friction.xhtml
+page-title: Static and Kinetic Friction
+page-index: friction_Simulation.xhtml
+resource: ill05_01/rpull.gif

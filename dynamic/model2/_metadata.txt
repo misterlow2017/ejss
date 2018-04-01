@@ -1,0 +1,17 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 171013. Visit http://www.um.es/fem/Ejs
+title: Problem 4.11: Modified Atwood's Machine
+logo-image: 
+author: Anonymous
+copyright: W. Christian
+preferred-width: 600
+preferred-height: 600
+author-image: 
+source: atwood1.ejss
+main-script: 
+main-simulation: atwood1_Simulation.xhtml
+available-languages: 
+html-contents: atwood1_Contents.xhtml
+html-main: atwood1.xhtml
+page-title: Modified Atwood's Machine
+page-index: atwood1_Simulation.xhtml
+resource: prob04_11/cart_large.gif
